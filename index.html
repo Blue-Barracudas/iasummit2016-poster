@@ -21,6 +21,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link href="c3/c3.css" rel="stylesheet" type="text/css">
+
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -30,65 +32,32 @@
 
    <body>
 
+   <script src="c3/c3.min.js"></script>
+   <script src="d3/d3.min.js"></script>
 
      <!-- Primary Page Layout
      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
      <div class="container">
        <div class="row">
             <div class="one-half column" style="margin-top: 25%">
-              <h4>Basic Page</h4>
+              <h1>Basic Page</h1>
               <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
               <div id="chart"></div>
-              <script src="d3/d3.min.js"></script>
               <script>
-                   (function(d3) {
-                      'use strict';
-
-                   var dataset = [
-                      { question: 'How are you', answer: 10},
-                      { question: 'Whats your name?', answer: 20},
-                      { question: 'Question 3', answer: 30},
-                      { question: 'fourth', answer: 40}
-                    ];
-
-                   var width = 360;
-                   var height = 360;
-                   var radius = Math.min(width, height) / 2;
-
-                   var color = d3.scale.category10();
-
-                   var svg = d3.select('#chart')
-                    .append('svg')
-                       .attr('width', width)
-                       .attr('height', height)
-
-                       .append('g')
-                          .attr('transform', 'translate(' + (width / 2)
-                           + ',' + (height / 2) +')');
-
-                    var arc = d3.svg.arc()
-                       .outerRadius(radius);
-
-                    var pie = d3.layout.pie()
-                       .value(function(d) { return d.answer; })
-                       .sort(null);
-
-                    var path = svg.selectAll('path')
-                       .data(pie(dataset))
-                       .enter()
-                       .append('path')
-                       .attr('d', arc)
-                       .attr('fill', function(d, i) {
-                          return color(d.data.question);
-                       });
-                       })(window.d3);
-                 </script>
-           </div>
+              var chart = c3.generate({
+                  bindto: '#chart',
+                  data: {
+                    url: 'https://api.typeform.com/v0/form/z1WakN?key=ae9ee9ab37f3a926d34b3efda9cef7175e912f8d&completed=true.json'
+                  }
+                  bar: {
+                    width: {
+                      ratio: 0.5
+                      }
+                  }
+              });
+              </script>
+            </div>
          </div>
       </div>
-
-     <script>
-
-     </script>
 </body>
 </html>
