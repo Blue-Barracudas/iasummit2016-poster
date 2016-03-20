@@ -1,11 +1,9 @@
 /*
-Syntax error: Invalid CSS after "  0": expected ")", was ": ("
-        on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss
-        from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss
+Syntax error: Invalid CSS after "  xs": expected ")", was ": 0,"
+        on line 19 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-grid.scss
 
 Backtrace:
-C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss:64
-C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss:8
+C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-grid.scss:19
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1129:in `expected'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/lexer.rb:199:in `expected!'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/parser.rb:476:in `assert_tok'
@@ -33,29 +31,10 @@ org/jruby/RubyKernel.java:2092:in `send'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1005:in `sass_script'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:497:in `variable'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:536:in `block_child'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:529:in `block_contents'
+D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:526:in `block_contents'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:70:in `stylesheet'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:27:in `parse'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:342:in `_to_tree'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:272:in `to_tree'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:222:in `visit_import'
-org/jruby/RubyKernel.java:2096:in `send'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2336:in `collect'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:126:in `visit_root'
-org/jruby/RubyKernel.java:2096:in `send'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-org/jruby/RubyKernel.java:2096:in `send'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/root_node.rb:20:in `render'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:315:in `_render'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:262:in `render'
 D:/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
@@ -80,4 +59,4 @@ D:\bin\compass:12:in `(root)'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss\A         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss"; }
+  content: "Syntax error: Invalid CSS after \"  xs\": expected \")\", was \": 0,\"\A         on line 19 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-grid.scss"; }

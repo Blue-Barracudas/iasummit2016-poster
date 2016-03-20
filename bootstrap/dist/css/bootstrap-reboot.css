@@ -1,11 +1,11 @@
 /*
 Syntax error: Invalid CSS after "  0": expected ")", was ": ("
         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss
-        from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss
+        from line 5 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-reboot.scss
 
 Backtrace:
 C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss:64
-C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss:8
+C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-reboot.scss:5
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1129:in `expected'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/lexer.rb:199:in `expected!'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/parser.rb:476:in `assert_tok'
@@ -80,4 +80,4 @@ D:\bin\compass:12:in `(root)'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss\A         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss"; }
+  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss\A         from line 5 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-reboot.scss"; }

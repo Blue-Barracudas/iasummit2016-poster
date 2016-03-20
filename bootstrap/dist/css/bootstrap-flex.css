@@ -2,10 +2,12 @@
 Syntax error: Invalid CSS after "  0": expected ")", was ": ("
         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss
         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss
+        from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-flex.scss
 
 Backtrace:
 C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss:64
 C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss:8
+C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-flex.scss:8
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1129:in `expected'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/lexer.rb:199:in `expected!'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/parser.rb:476:in `assert_tok'
@@ -39,6 +41,12 @@ D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:27:in `parse'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:342:in `_to_tree'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:272:in `to_tree'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:222:in `visit_import'
+org/jruby/RubyKernel.java:2096:in `send'
+D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
+D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:224:in `visit_import'
+org/jruby/RubyArray.java:2336:in `collect'
+D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:224:in `visit_import'
 org/jruby/RubyKernel.java:2096:in `send'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
 D:/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
@@ -80,4 +88,4 @@ D:\bin\compass:12:in `(root)'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss\A         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss"; }
+  content: "Syntax error: Invalid CSS after \"  0\": expected \")\", was \": (\"\A         on line 64 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/_variables.scss\A         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap.scss\A         from line 8 of C:/Users/Jarrod/Documents/GitHub/poster2016/bootstrap/scss/bootstrap-flex.scss"; }
