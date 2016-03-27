@@ -1,11 +1,11 @@
 /*-- Chart --*/
 .c3 svg {
-  font: 10px sans-serif;
+  font: 16px 'Lato', sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 .c3 path, .c3 line {
   fill: none;
-  stroke: #000; }
+  stroke: #FFF; }
 
 .c3 text {
   -webkit-user-select: none;
@@ -16,13 +16,24 @@
   shape-rendering: crispEdges; }
 
 .c3-chart-arc path {
-  stroke: #fff; }
+  stroke: black; }
 
 .c3-chart-arc text {
   fill: #fff;
   font-size: 13px; }
 
 /*-- Axis --*/
+.c3-axis {
+  fill: #fff;
+}
+
+.c3-axis-x {
+  stroke: ;
+}
+.c3-axis-y {
+  fill: #fff;
+  
+}
 /*-- Grid --*/
 .c3-grid line {
   stroke: #aaa; }
@@ -80,10 +91,12 @@
 /*-- Select - Drag --*/
 /*-- Legend --*/
 .c3-legend-item {
-  font-size: 12px; }
+  font-size: 14px;
+  fill: #FFF;
+  }
 
 .c3-legend-item-hidden {
-  opacity: 0.15; }
+  opacity: 0.35; }
 
 .c3-legend-background {
   opacity: 0.75;
@@ -117,12 +130,13 @@
   font-size: 14px;
   padding: 2px 5px;
   text-align: left;
-  color: #FFF; }
+  color: black; }
 
 .c3-tooltip td {
   font-size: 13px;
   padding: 3px 6px;
   background-color: #fff;
+  color: black;
   border-left: 1px dotted #999; }
 
 .c3-tooltip td > span {
