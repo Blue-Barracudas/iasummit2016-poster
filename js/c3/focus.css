@@ -1,0 +1,14 @@
+/* line 1, src/scss/focus.scss */
+.c3-target.c3-focused {
+  opacity: 1;
+}
+
+/* line 4, src/scss/focus.scss */
+.c3-target.c3-focused path.c3-line, .c3-target.c3-focused path.c3-step {
+  stroke-width: 2px;
+}
+
+/* line 7, src/scss/focus.scss */
+.c3-target.c3-defocused {
+  opacity: 0.3 !important;
+}

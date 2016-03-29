@@ -1,0 +1,14 @@
+/* line 1, src/scss/grid.scss */
+.c3-grid line {
+  stroke: #aaa;
+}
+
+/* line 4, src/scss/grid.scss */
+.c3-grid text {
+  fill: #aaa;
+}
+
+/* line 7, src/scss/grid.scss */
+.c3-xgrid, .c3-ygrid {
+  stroke-dasharray: 3 3;
+}

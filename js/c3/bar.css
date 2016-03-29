@@ -1,0 +1,9 @@
+/* line 1, src/scss/bar.scss */
+.c3-bar {
+  stroke-width: 0;
+}
+
+/* line 4, src/scss/bar.scss */
+.c3-bar._expanded_ {
+  fill-opacity: 0.75;
+}

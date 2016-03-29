@@ -1,0 +1,11 @@
+/* line 1, src/scss/point.scss */
+.c3-circle._expanded_ {
+  stroke-width: 1px;
+  stroke: white;
+}
+
+/* line 5, src/scss/point.scss */
+.c3-selected-circle {
+  fill: white;
+  stroke-width: 2px;
+}
