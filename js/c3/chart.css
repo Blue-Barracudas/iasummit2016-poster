@@ -1,0 +1,38 @@
+/* line 1, src/scss/chart.scss */
+.c3 svg {
+  font: 10px sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 5, src/scss/chart.scss */
+.c3 path, .c3 line {
+  fill: none;
+  stroke: #000;
+}
+
+/* line 9, src/scss/chart.scss */
+.c3 text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 19, src/scss/chart.scss */
+.c3-legend-item-tile,
+.c3-xgrid-focus,
+.c3-ygrid,
+.c3-event-rect,
+.c3-bars path {
+  shape-rendering: crispEdges;
+}
+
+/* line 23, src/scss/chart.scss */
+.c3-chart-arc path {
+  stroke: #fff;
+}
+
+/* line 27, src/scss/chart.scss */
+.c3-chart-arc text {
+  fill: #fff;
+  font-size: 13px;
+}

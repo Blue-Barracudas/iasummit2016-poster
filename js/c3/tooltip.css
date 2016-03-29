@@ -1,0 +1,51 @@
+/* line 1, src/scss/tooltip.scss */
+.c3-tooltip-container {
+  z-index: 10;
+}
+
+/* line 4, src/scss/tooltip.scss */
+.c3-tooltip {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  empty-cells: show;
+  -webkit-box-shadow: 7px 7px 12px -9px #777777;
+  -moz-box-shadow: 7px 7px 12px -9px #777777;
+  box-shadow: 7px 7px 12px -9px #777777;
+  opacity: 0.9;
+}
+
+/* line 14, src/scss/tooltip.scss */
+.c3-tooltip tr {
+  border: 1px solid #CCC;
+}
+
+/* line 17, src/scss/tooltip.scss */
+.c3-tooltip th {
+  background-color: #aaa;
+  font-size: 14px;
+  padding: 2px 5px;
+  text-align: left;
+  color: #FFF;
+}
+
+/* line 24, src/scss/tooltip.scss */
+.c3-tooltip td {
+  font-size: 13px;
+  padding: 3px 6px;
+  background-color: #fff;
+  border-left: 1px dotted #999;
+}
+
+/* line 30, src/scss/tooltip.scss */
+.c3-tooltip td > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+
+/* line 36, src/scss/tooltip.scss */
+.c3-tooltip td.value {
+  text-align: right;
+}

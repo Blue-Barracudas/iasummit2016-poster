@@ -1,0 +1,33 @@
+/* line 1, src/scss/arc.scss */
+.c3-chart-arcs-title {
+  dominant-baseline: middle;
+  font-size: 1.3em;
+}
+
+/* line 6, src/scss/arc.scss */
+.c3-chart-arcs .c3-chart-arcs-background {
+  fill: #e0e0e0;
+  stroke: none;
+}
+
+/* line 10, src/scss/arc.scss */
+.c3-chart-arcs .c3-chart-arcs-gauge-unit {
+  fill: #000;
+  font-size: 16px;
+}
+
+/* line 14, src/scss/arc.scss */
+.c3-chart-arcs .c3-chart-arcs-gauge-max {
+  fill: #777;
+}
+
+/* line 17, src/scss/arc.scss */
+.c3-chart-arcs .c3-chart-arcs-gauge-min {
+  fill: #777;
+}
+
+/* line 21, src/scss/arc.scss */
+.c3-chart-arc .c3-gauge-value {
+  fill: #000;
+  /*  font-size: 28px !important;*/
+}
