@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>State of UX Survey</title>
+    <title>Let's Compare Notes</title>
 
     <!-- Style -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    "bootstrap/dist/css/bootstrap.min.css" <script src="bootstrap/js/bootstrap.min.js"></script>
     <link href="js/c3/c3.css" rel="stylesheet" type="text/css">
     <link href="scss/css/app.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,12 +22,11 @@
   <body>
     <div class="wrapper">
       <nav class="sidebar">
-        <h1 class="nav-heading">UX Survey</h1>
         <ul class="sidebar-nav timeline">
           <div class="time-node"></div><li><a href="index.html">Comparing Experiences</a></li>
           <div class="time-node"></div><li><a href="yesterday.html">Yesterday</a></li>
             <ul>
-              <li><a href="background.html">Training</a></li>
+              <li><a href="background.html">Background</a></li>
               <li><a href="years_exp.html">Years of Experience</a></li>
             </ul>
           <div class="time-node"></div><li><a href="today.html">Today</a></li>
@@ -39,7 +38,7 @@
             </ul>
           <div class="time-node active-node"></div><li><a href="tomorrow.html">Tomorrow</a></li>
             <ul>
-              <li><a href="opportunities">UX Opportunities</a></li>
+              <li><a href="opportunities.html">Opportunities</a></li>
               <li><a class="active-link" href="future-ux.html">Skills</a></li>
             </ul>
           <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
@@ -49,20 +48,26 @@
         </div>
       </nav>
 
-      <div id="content">
-         <div class="page-title pull-xs-right">
-            <h2><i class="fa fa-clock-o"></i> FUTURE</h2>
-          </div>
-        <div class="container-fluid">
+      <div class="sub-nav col-sm-12">
+        <div class="back col-sm-6">
+          <a href="opportunities.html"><i class="fa fa-chevron-left"></i>Growth Areas</a>
+        </div>
+
+        <div class="forward col-sm-6">
+          <a href="sharing-experiences.html">Sharing Experiences<i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+        <div class="container-fluid content">
           <div class="graph col-sm-12">
-            <h3>What skills do you think UX'ers will need to have in field you previously selected?</h3>
+            <h1>What skills do you think UX'ers will need to have in field you previously selected?</h1>
             <div id="futureSkills"></div>
           </div>
           <script>
             var chart = c3.generate({
                 bindto: '#futureSkills',
                 size: {height:600},
-                padding: {right:200, left:300, top:50, bottom:25},
+                padding: {right:100, left:200, top:50, bottom:25},
                 legend: {show:false},
                 color: {pattern: ['#F6B352']},
                 data: {
@@ -91,18 +96,7 @@
                 }
             });
           </script>
-        <div class="sub-nav col-sm-12">
-          <div class="back col-sm-6">
-            <a href="opportunities.html"><i class="fa fa-chevron-left"></i>Growth Areas</a>
-          </div>
-
-          <div class="forward col-sm-6">
-            <a href="sharing-experiences.html">Sharing Experiences<i class="fa fa-chevron-right"></i></a>
-          </div>
-        </div>
-
       </div>
-    </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
