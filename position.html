@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>State of UX Survey</title>
+    <title>Let's Compare Notes</title>
 
     <!-- Style -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="js/c3/c3.css" rel="stylesheet" type="text/css">
     <link href="scss/css/app.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -16,58 +16,66 @@
     <!-- Graph Scripts -->
     <script src="js/c3/c3.min.js"></script>
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
   </head>
 
   <body>
     <div class="wrapper">
       <nav class="sidebar">
-        <h1 class="nav-heading">UX Survey</h1>
+
         <ul class="sidebar-nav timeline">
-          <div class="time-node"></div><li><a href="index.html">Start</a></li>
-          <div class="time-node"></div><li><a href="background.html">Background</a></li>
+          <div class="time-node"></div><li><a href="index.html">Comparing Experiences</a></li>
+          <div class="time-node"></div><li><a href="yesterday.html">Yesterday</a></li>
             <ul>
-              <li><a href="training.html">Training</a></li>
+              <li><a href="background.html">Background</a></li>
               <li><a href="years_exp.html">Years of Experience</a></li>
             </ul>
-          <div class="time-node active-node"></div><li><a href="current.html">Current</a></li>
+          <div class="time-node active-node"></div><li><a href="today.html">Today</a></li>
             <ul>
               <li><a href="organization.html">Organization</a>
               <li><a class="active-link" href="position.html">Position</a>
               <li><a href="tasks.html">Tasks</a>
               <li><a href="tools.html">Tools</a>
             </ul>
-          <div class="time-node"></div><li><a href="future.html">Future</a></li>
+          <div class="time-node"></div><li><a href="tomorrow.html">Tomorrow</a></li>
             <ul>
-              <li><a href="opportunities">UX Opportunities</a></li>
-              <li><a href="skills">Skills</a></li>
+              <li><a href="opportunities.html">Opportunities</a></li>
+              <li><a href="future-ux.html">Skills</a></li>
             </ul>
-          <div class="time-node"></div><li><a href="end.html">End</a></li>
+          <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
           </ul>
         <div class="about">
           <button><a href="about.html">About</a></button>
         </div>
       </nav>
 
-      <div id="content">
-         <div class="page-title pull-xs-right">
-            <h2><i class="fa fa-clock-o"></i> CURRENT</h2>
-          </div>
-        <div class="container-fluid">
+      <div class="sub-nav col-sm-12">
+        <div class="back col-sm-6">
+          <a href="organization.html"><i class="fa fa-chevron-left"></i>Organization</a>
+        </div>
+
+        <div class="forward col-sm-6">
+          <a href="tasks.html">Tasks<i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+      <div class="container-fluid content">
           <div class="graph col-sm-12">
-            <h3>What best describes your current job title?</h3>
+            <h1>What best describes your current job title?</h1>
             <div id="position"></div>
           </div>
           <script>
             var chart = c3.generate({
                 bindto: '#position',
                 size: {height:600},
-                padding: {right:200, left:300, top:50, bottom:25},
+                padding: {right:100, left:200, top:30, bottom:25},
                 legend: {show:false},
                 color: {pattern: ['#F6B352']},
                 data: {
                     x : 'jobTitle',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1AEHJaNJ6U7i6PI9Nxjpdzcw-JOFVo4adgC7tV4Vk6EM/pub?gid=1948855276&single=true&output=csv',
+                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv',
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -87,25 +95,17 @@
                   rotated: true,
                 },
                 bar: {
-                  width: 30,
+                  width: {
+                    ratio: .50,},
                 }
             });
           </script>
-        <div class="sub-nav col-sm-12">
-          <div class="back col-sm-6">
-            <a href="organization.html"><i class="fa fa-chevron-left"></i>Organization</a>
-          </div>
 
-          <div class="forward col-sm-6">
-            <a href="tasks.html">Tasks<i class="fa fa-chevron-right"></i></a>
-          </div>
-        </div>
 
       </div>
     </div>
-    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
   </body>
 </html>

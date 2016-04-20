@@ -18,24 +18,21 @@
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
   </head>
 
   <body>
     <div class="wrapper">
       <nav class="sidebar">
-
         <ul class="sidebar-nav timeline">
           <div class="time-node"></div><li><a href="index.html">Comparing Experiences</a></li>
-          <div class="time-node"></div><li><a href="yesterday.html">Yesterday</a></li>
+          <div class="time-node active-node"></div><li><a  class="active-link" href="yesterday.html">Yesterday</a></li>
             <ul>
               <li><a href="background.html">Background</a></li>
               <li><a href="years_exp.html">Years of Experience</a></li>
             </ul>
-          <div class="time-node active-node"></div><li><a href="today.html">Today</a></li>
+          <div class="time-node"></div><li><a href="today.html">Today</a></li>
             <ul>
-              <li><a class="active-link" href="organization.html">Organization</a>
+              <li><a href="organization.html">Organization</a>
               <li><a href="position.html">Position</a>
               <li><a href="tasks.html">Tasks</a>
               <li><a href="tools.html">Tools</a>
@@ -52,56 +49,29 @@
         </div>
       </nav>
 
-      <div class="sub-nav col-sm-12">
-        <div class="back col-sm-6">
-          <a href="today.html"><i class="fa fa-chevron-left"></i>Today</a>
-        </div>
-
-        <div class="forward col-sm-6">
-          <a href="position.html">Position<i class="fa fa-chevron-right"></i></a>
-        </div>
-      </div>
-
-        <div class="container-fluid content">
-          <div class="graph col-sm-12">
-            <h1>What best describes the type of organization you work in?</h1>
-            <div id="organization"></div>
+      <div class="sub-nav col-md-12">
+          <div class="back col-md-6">
+            <a href="index.html"><i class="fa fa-chevron-left"></i>Comparing Experiences</a>
           </div>
-          <script>
-            var chart = c3.generate({
-                bindto: '#organization',
-                size: {height:600},
-                padding: {right:200, left:300, top:30, bottom:25},
-                legend: {show:false},
-                color: {pattern: ['#F6B352']},
-                data: {
-                    x : 'orgType',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=158250635&single=true&output=csv',
-                    type: 'bar',
-                  },
-                grid: {x: {show: true}},
-                axis: {
-                  x: {
-                    type:'category',
-                    tick: {
-                      multiline:false,
-                    },
-                  },
-                  y: {
-                    label: {
-                       text: '# of Respondents',
-                       position: 'outer-center',
-                    }
-                  },
-                  rotated: true,
-                },
-                bar: {
-                  width: 30,
-                }
-            });
-          </script>
-
-
+          <div class="forward col-md-6">
+            <a href="background.html">Background<i class="fa fa-chevron-right"></i></a>
+          </div>
+      </div>
+      <div class="container-fluid content">
+        <div class="row">
+          <div class="col-md-2" style="text-align:center; font-size:7em;">
+            <i class="fa fa-backward"></i>
+          </div>
+            <div class="col-md-7">
+              <h1>Yesterday</h1>
+              <p>The past puts the present into meaningful context. We asked UX professionals to tell us about their (metaphorical) yesterday:</p>
+                <ul>
+                  <li>What types of disciplines did they come from?</li>
+                  <li>What were their first "UX" roles like?</li>
+                  <li>How long have they been at it?</li>
+                </ul>
+            </div>
+        </div>
       </div>
     </div>
 
