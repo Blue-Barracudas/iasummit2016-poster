@@ -1,1 +1,209 @@
-body{font-family:'Lato', 'Helvetica', 'Arial', sans-serif;background-color:#1f2124;color:#FFFFFF}a{color:white}p{font-size:1.15em}.wrapper{padding-left:350px;padding-right:50px}.timeline{list-style:none;position:relative;padding-bottom:250px}.timeline:before{top:0;bottom:0;position:absolute;content:" ";width:3px;background-color:#50535a;margin-left:-1.5px}.time-node{width:25px;height:25px;position:relative;top:38px;margin-left:-12px;background-color:#50535a;z-index:100;border-top-right-radius:50%;border-top-left-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%}.active-node{background-color:#f6b352}.sidebar{width:300px;position:fixed;left:300px;height:100%;background-color:#383a3f;margin-left:-300px;padding:0 10px}.sidebar a:hover{text-decoration:none;color:#FFF;border-bottom:solid 2px #FFF;display:inline;padding-bottom:1.5px}.sidebar a.active-link{border-bottom:solid 2px #f6b352;display:inline;padding-bottom:1.5px}.sidebar a.active-link:hover{text-decoration:none}.sidebar ul{list-style-type:none;padding-left:15px}.sidebar ul li{margin-top:10px;padding-left:20px;font-size:1.15em}.sidebar .nav-heading{display:flex;justify-content:center;align-items:center;padding:10px}.sidebar .about{position:fixed;bottom:0px;left:0px;width:300px;z-index:1000}.sidebar .about button{font-size:1.25em;padding:10px;width:100%;background-color:#2c2e31;border:0;-webkit-transition:background-color .5s;transition:background-color .5s}.sidebar .about button a{text-decoration:none;color:inherit}.sidebar .about button:hover{background-color:#f36327}.content{padding-top:5em}h1{margin-bottom:25px;line-height:.85}h1 .sub-title{text-transform:uppercase;font-size:65%}.page-title{padding:10px 50px;background-color:#f6b352;margin-bottom:1.25em}.page-title h2{font-weight:400;margin-bottom:0}.sub-nav{padding-top:1.5em}.sub-nav i:first-child{padding-left:.75em}.sub-nav i:last-child{padding-right:.75em}.sub-nav a{font-size:1.25em}.sub-nav a:hover{color:#e6e6e6}.forward{text-align:right}.graph{text-align:center}.graph h1{font-size:2em;padding-top:1.25em;margin-bottom:0;line-height:1.25em}text.c3-axis-y-label{font-size:1.10em}
+/*----Basic styles----------------*/
+/* line 8, ../app.scss */
+body {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  background-color: #1f2124;
+  color: #FFFFFF;
+}
+
+/* line 14, ../app.scss */
+a {
+  color: white;
+}
+
+/* line 18, ../app.scss */
+p {
+  font-size: 1.15em;
+}
+
+/* line 23, ../app.scss */
+.wrapper {
+  padding-left: 350px;
+  padding-right: 50px;
+}
+
+/*----Side bar----------------*/
+/* line 29, ../app.scss */
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-bottom: 250px;
+}
+
+/* line 35, ../app.scss */
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #50535a;
+  margin-left: -1.5px;
+}
+
+/* line 45, ../app.scss */
+.time-node {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 38px;
+  margin-left: -12px;
+  background-color: #50535a;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+/* line 59, ../app.scss */
+.active-node {
+  background-color: #f6b352;
+}
+
+/* line 63, ../app.scss */
+.sidebar {
+  width: 300px;
+  position: fixed;
+  left: 300px;
+  height: 100%;
+  background-color: #383a3f;
+  margin-left: -300px;
+  padding: 0 10px;
+}
+/* line 72, ../app.scss */
+.sidebar a:hover {
+  text-decoration: none;
+  color: #FFF;
+  border-bottom: solid 2px #FFF;
+  display: inline;
+  padding-bottom: 1.5px;
+}
+/* line 80, ../app.scss */
+.sidebar a.active-link {
+  border-bottom: solid 2px #f6b352;
+  display: inline;
+  padding-bottom: 1.5px;
+}
+/* line 85, ../app.scss */
+.sidebar a.active-link:hover {
+  text-decoration: none;
+}
+/* line 91, ../app.scss */
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+/* line 95, ../app.scss */
+.sidebar ul li {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 1.15em;
+}
+/* line 102, ../app.scss */
+.sidebar .nav-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+/* line 110, ../app.scss */
+.sidebar .about {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 300px;
+  z-index: 1000;
+}
+/* line 117, ../app.scss */
+.sidebar .about button {
+  font-size: 1.25em;
+  padding: 10px;
+  width: 100%;
+  background-color: #2c2e31;
+  border: 0;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+/* line 126, ../app.scss */
+.sidebar .about button a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 130, ../app.scss */
+.sidebar .about button:hover {
+  background-color: #f36327;
+}
+
+/*----Content Area----------------*/
+/* line 139, ../app.scss */
+.content {
+  padding-top: 5em;
+}
+
+/* line 144, ../app.scss */
+h1 {
+  margin-bottom: 25px;
+  line-height: .85;
+}
+/* line 149, ../app.scss */
+h1 .sub-title {
+  text-transform: uppercase;
+  font-size: 65%;
+}
+
+/* line 157, ../app.scss */
+.page-title {
+  padding: 10px 50px;
+  background-color: #f6b352;
+  margin-bottom: 1.25em;
+}
+/* line 162, ../app.scss */
+.page-title h2 {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* line 168, ../app.scss */
+.sub-nav {
+  padding-top: 1.5em;
+}
+/* line 171, ../app.scss */
+.sub-nav i:first-child {
+  padding-left: .75em;
+}
+/* line 175, ../app.scss */
+.sub-nav i:last-child {
+  padding-right: .75em;
+}
+/* line 179, ../app.scss */
+.sub-nav a {
+  font-size: 1.25em;
+}
+/* line 182, ../app.scss */
+.sub-nav a:hover {
+  color: #e6e6e6;
+}
+
+/* line 192, ../app.scss */
+.forward {
+  text-align: right;
+}
+
+/*----Data Visualizations----------------*/
+/* line 197, ../app.scss */
+.graph {
+  text-align: center;
+}
+/* line 200, ../app.scss */
+.graph h1 {
+  font-size: 2em;
+  padding-top: 1.25em;
+  margin-bottom: 0;
+  line-height: 1.25em;
+}
+
+/* line 208, ../app.scss */
+text.c3-axis-y-label {
+  font-size: 1.10em;
+}
