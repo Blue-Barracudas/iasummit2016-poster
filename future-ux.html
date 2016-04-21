@@ -45,10 +45,41 @@
             </ul>
           <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
           </ul>
-        <div class="about">
-          <button><a href="about.html">About</a></button>
+          <div class="about">
+            <button data-toggle="modal" data-target="#about-modal">About</button>
+          </div>
+        </nav>
+
+        <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="About" aria-hidden="true" style="color:#464646">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="about-modal-label">About</h4>
+              </div>
+            <div class="modal-body">
+              <p>This project was accomplished with the help of:</p>
+              <ul>
+                <li>Google Forms/Spreadsheets</li>
+                <li>Twitter Bootstrap</li>
+                <li>d3.js</li>
+                <li>c3.js</li>
+              </ul>
+              <p>Special thanks to every one at IA Summit</p>
+              <ul>
+                <li>Andrew Barrocas @ Sapient Nitro</li>
+                <li>Matt Russell @ IHG</li>
+                <li>Jarrod Thacker @ Campus Labs</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-      </nav>
+      </div>
 
       <div class="sub-nav col-sm-12">
         <div class="back col-sm-6">
@@ -101,7 +132,7 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
   </body>
 </html>
