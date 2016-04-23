@@ -7,28 +7,29 @@
     <title>Let's Compare Notes</title>
 
     <!-- Style -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="js/c3/c3.css" rel="stylesheet" type="text/css">
     <link href="scss/css/app.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="scss/css/font-awesome.min.css">
 
-    <!-- Graph Scripts -->
+    <!-- Scripts -->
     <script src="js/c3/c3.min.js"></script>
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
   </head>
 
-  <body id="yesterday">
+  <body>
     <div class="wrapper">
       <nav class="sidebar">
         <ul class="sidebar-nav timeline">
-          <div class="time-node"></div><li><a href="index.html">Comparing Experiences</a></li>
+          <div class="time-node"></div>
+          <li><a href="index.html">Comparing Experiences</a></li>
           <div class="time-node active-node"></div><li><a class="active-link" href="yesterday.html">Yesterday</a></li>
             <ul>
               <li><a href="background.html">Background</a></li>
-              <li><a href="years_exp.html">Years of Experience</a></li>
+              <li><a href="years-exp.html">Years of Experience</a></li>
             </ul>
           <div class="time-node"></div><li><a href="today.html">Today</a></li>
             <ul>
@@ -40,7 +41,7 @@
           <div class="time-node"></div><li><a href="tomorrow.html">Tomorrow</a></li>
             <ul>
               <li><a href="opportunities.html">Opportunities</a></li>
-              <li><a href="future-ux.html">Skills</a></li>
+              <li><a href="skills.html">Skills</a></li>
             </ul>
           <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
           </ul>
@@ -80,31 +81,24 @@
         </div>
       </div>
 
-      <div class="sub-nav col-md-12">
-          <div class="back col-md-6">
-            <a href="index.html"><i class="fa fa-chevron-left"></i>Comparing Experiences</a>
-          </div>
-          <div class="forward col-md-6">
-            <a href="background.html">Background<i class="fa fa-chevron-right"></i></a>
-          </div>
-      </div>
-
-      <div class="container-fluid content" id="yesterday-content">
-        <div class="row">
-          <div style="text-align:center; font-size:7em;">
-            <i class="fa fa-backward"></i>
-          </div>
-              <h1>Yesterday</h1>
-              <p>The past puts the present into meaningful context. We asked UX professionals to tell us about their (metaphorical) yesterday:</p>
-                <ul>
-                  <li>What types of disciplines did they come from?</li>
-                  <li>What were their first "UX" roles like?</li>
-                  <li>How long have they been at it?</li>
-                </ul>
+      <div class="container-fluid content">
+         <div class="sub-nav">
+            <div class="back col-md-6">
+             <span class="sub-nav-icon"><i class="fa fa-chevron-left"></i>| </span><a href="index.html"> PREVIOUS<br /><span class="sub-nav-text left-text">Comparing Experiences</span></a>
             </div>
+            <div class="forward col-md-6">
+               <span class="sub-nav-icon right-icon">  |<i class="fa fa-chevron-right"></i></span><a href="background.html">NEXT<br /><span class="sub-nav-text right-text">Background</span></a>
+            </div>
+         </div>
+        <div class="col-md-12">
+           <h1>Yesterday</h1>
+           <p>The past puts the present into meaningful context. We asked UX professionals to tell us about their days leading up to where they are now &mdash; What types of disciplines did they come from? What were their first "UX" roles like? How long have they been at it?</p>
+
+           <p>Let's find out.</p>
+         </div>
+
         </div>
       </div>
-    </div>
 
 
 

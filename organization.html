@@ -7,13 +7,13 @@
     <title>Let's Compare Notes</title>
 
     <!-- Style -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="js/c3/c3.css" rel="stylesheet" type="text/css">
     <link href="scss/css/app.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="scss/css/font-awesome.min.css">
 
-    <!-- Graph Scripts -->
+    <!-- Scripts -->
     <script src="js/c3/c3.min.js"></script>
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
           <div class="time-node"></div><li><a href="yesterday.html">Yesterday</a></li>
             <ul>
               <li><a href="background.html">Background</a></li>
-              <li><a href="years_exp.html">Years of Experience</a></li>
+              <li><a href="years-exp.html">Years of Experience</a></li>
             </ul>
           <div class="time-node active-node"></div><li><a href="today.html">Today</a></li>
             <ul>
@@ -43,7 +43,7 @@
           <div class="time-node"></div><li><a href="tomorrow.html">Tomorrow</a></li>
             <ul>
               <li><a href="opportunities.html">Opportunities</a></li>
-              <li><a href="future-ux.html">Skills</a></li>
+              <li><a href="skills.html">Skills</a></li>
             </ul>
           <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
           </ul>
@@ -83,18 +83,16 @@
         </div>
       </div>
 
-      <div class="sub-nav col-sm-12">
-        <div class="back col-sm-6">
-          <a href="today.html"><i class="fa fa-chevron-left"></i>Today</a>
-        </div>
-
-        <div class="forward col-sm-6">
-          <a href="position.html">Position<i class="fa fa-chevron-right"></i></a>
-        </div>
-      </div>
-
         <div class="container-fluid content">
-          <div class="graph col-sm-12">
+           <div class="sub-nav">
+            <div class="back col-md-6">
+                <span class="sub-nav-icon"><i class="fa fa-chevron-left"></i>| </span><a href="today.html"> PREVIOUS<br /><span class="sub-nav-text left-text">Today</span></a>
+            </div>
+            <div class="forward col-md-6">
+                <span class="sub-nav-icon right-icon">  |<i class="fa fa-chevron-right"></i></span><a href="position.html">NEXT<br /><span class="sub-nav-text right-text">Position</span></a>
+            </div>
+           </div>
+          <div class="graph col-md-12">
             <h1>What best describes the type of organization you work in?</h1>
             <div id="organization"></div>
           </div>
@@ -102,9 +100,9 @@
             var chart = c3.generate({
                 bindto: '#organization',
                 size: {height:600},
-                padding: {right:200, left:300, top:30, bottom:25},
+                padding: {right:100, left:100, top:30, bottom:25},
                 legend: {show:false},
-                color: {pattern: ['#F65252']},
+                color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'orgType',
                     url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=158250635&single=true&output=csv',

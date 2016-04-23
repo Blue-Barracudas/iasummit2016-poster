@@ -1,57 +1,104 @@
 /*----Basic styles----------------*/
 /* line 10, ../app.scss */
 body {
-  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Lato',  sans-serif;
   background: #232526;
   background: -webkit-linear-gradient(to left, #232526, #414345);
   background: linear-gradient(to left, #232526, #414345);
   color: white;
 }
-/* line 17, ../app.scss */
-body#yesterday {
-  background-image: url("../../img/yesterday.jpg");
-  background-position: -450px, top;
+
+/* line 18, ../app.scss */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: .25em;
+  letter-spacing: -1px;
 }
 
-/* line 27, ../app.scss */
+/* line 25, ../app.scss */
+h1 {
+  font-size: 3em;
+  line-height: .85;
+}
+/* line 29, ../app.scss */
+h1 .sub-title {
+  text-transform: uppercase;
+  font-size: 65%;
+}
+
+/* line 35, ../app.scss */
+h2 {
+  font-size: 2em;
+}
+
+/* line 39, ../app.scss */
 a {
+  color: #f4d03f;
+}
+/* line 41, ../app.scss */
+a:hover {
   color: white;
 }
 
-/* line 32, ../app.scss */
+/* line 47, ../app.scss */
 .modal-body a {
   color: #464646;
 }
 
-/* line 36, ../app.scss */
-p {
-  font-size: 2em;
-}
-
-/* line 40, ../app.scss */
-ul {
-  list-style: none;
-}
-/* line 43, ../app.scss */
-ul li {
-  font-size: 2em;
-}
-
-/* line 49, ../app.scss */
+/* line 54, ../app.scss */
 .wrapper {
   padding-left: 350px;
   padding-right: 50px;
 }
 
+/* line 59, ../app.scss */
+.btn {
+  font-size: 1.5em;
+  font-weight: 700;
+  border: none;
+  margin-top: .75em;
+  background: transparent;
+}
+/* line 66, ../app.scss */
+.btn.btn-primary {
+  color: #f68657;
+  border: 1px solid #f68657;
+}
+/* line 69, ../app.scss */
+.btn.btn-primary:hover {
+  color: #FFF;
+  background: #f68657;
+}
+/* line 74, ../app.scss */
+.btn.btn-default {
+  color: #f4d03f;
+  border: 1px solid #f4d03f;
+}
+/* line 77, ../app.scss */
+.btn.btn-default:hover {
+  color: #FFF;
+  background: #f4d03f;
+}
+
+/* line 84, ../app.scss */
+.callouts {
+  text-align: center;
+}
+/* line 87, ../app.scss */
+.callouts p {
+  text-align: left;
+}
+
 /*----Side bar----------------*/
-/* line 56, ../app.scss */
+/* line 92, ../app.scss */
 .timeline {
   list-style: none;
   position: relative;
-  padding-bottom: 250px;
+  padding-bottom: 78px;
 }
 
-/* line 62, ../app.scss */
+/* line 98, ../app.scss */
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -62,7 +109,7 @@ ul li {
   margin-left: -1.5px;
 }
 
-/* line 72, ../app.scss */
+/* line 108, ../app.scss */
 .time-node {
   width: 25px;
   height: 25px;
@@ -77,24 +124,28 @@ ul li {
   border-bottom-left-radius: 50%;
 }
 
-/* line 86, ../app.scss */
+/* line 122, ../app.scss */
 .active-node {
   background-color: #f4d03f;
 }
 
-/* line 90, ../app.scss */
+/* line 126, ../app.scss */
 .sidebar {
   width: 300px;
   position: fixed;
   left: 300px;
   height: 100%;
-  background: #f65252;
-  background: -webkit-linear-gradient(to top, #f65252, #f53a3a);
-  background: linear-gradient(to top, #f65252, #f53a3a);
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #232526, #3a3c3e);
+  background: linear-gradient(to right, #232526, #3a3c3e);
   margin-left: -300px;
   padding: 0 10px;
 }
-/* line 102, ../app.scss */
+/* line 137, ../app.scss */
+.sidebar a {
+  color: #FFF;
+}
+/* line 141, ../app.scss */
 .sidebar a:hover {
   text-decoration: none;
   color: #FFF;
@@ -102,35 +153,42 @@ ul li {
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 110, ../app.scss */
+/* line 149, ../app.scss */
 .sidebar a.active-link {
   border-bottom: solid 3px #f4d03f;
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 115, ../app.scss */
+/* line 154, ../app.scss */
 .sidebar a.active-link:hover {
   text-decoration: none;
 }
-/* line 121, ../app.scss */
+/* line 160, ../app.scss */
 .sidebar ul {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  letter-spacing: -1px;
   list-style-type: none;
   padding-left: 15px;
 }
-/* line 125, ../app.scss */
+/* line 167, ../app.scss */
 .sidebar ul li {
   margin-top: 10px;
   padding-left: 20px;
   font-size: 1.55em;
 }
-/* line 132, ../app.scss */
+/* line 173, ../app.scss */
+.sidebar ul ul {
+  font-size: .8em;
+}
+/* line 178, ../app.scss */
 .sidebar .nav-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-/* line 140, ../app.scss */
+/* line 186, ../app.scss */
 .sidebar .about {
   position: fixed;
   bottom: 0px;
@@ -138,100 +196,109 @@ ul li {
   width: 300px;
   z-index: 1000;
 }
-/* line 147, ../app.scss */
+/* line 193, ../app.scss */
 .sidebar .about button {
-  font-size: 1.25em;
+  font-size: 1.50em;
   padding: 10px;
   width: 100%;
-  background-color: #f65252;
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #232526, #3a3c3e);
+  background: linear-gradient(to right, #232526, #3a3c3e);
   border: 0;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
 }
-/* line 156, ../app.scss */
-.sidebar .about button a {
-  text-decoration: none;
-  color: inherit;
-}
-/* line 160, ../app.scss */
+/* line 204, ../app.scss */
 .sidebar .about button:hover {
-  background-color: #f1c40f;
+  background: #f1c40f;
 }
 
 /*----Content Area----------------*/
-/* line 169, ../app.scss */
-.content {
-  padding-top: 5em;
-}
-
-/* line 174, ../app.scss */
-h1 {
-  margin-bottom: 25px;
-  line-height: .85;
-}
-/* line 179, ../app.scss */
-h1 .sub-title {
-  text-transform: uppercase;
-  font-size: 65%;
-}
-
-/* line 187, ../app.scss */
-.page-title {
-  padding: 10px 50px;
-  background-color: #f4d03f;
-  margin-bottom: 1.25em;
-}
-/* line 192, ../app.scss */
-.page-title h2 {
-  font-weight: 400;
-  margin-bottom: 0;
-}
-
-/* line 198, ../app.scss */
-.sub-nav {
-  padding-top: 1.5em;
-}
-/* line 201, ../app.scss */
-.sub-nav i:first-child {
-  padding-left: .75em;
-}
-/* line 205, ../app.scss */
-.sub-nav i:last-child {
-  padding-right: .75em;
-}
-/* line 209, ../app.scss */
-.sub-nav a {
-  font-size: 2em;
-}
 /* line 212, ../app.scss */
+.content {
+  padding-top: 2.5em;
+}
+/* line 215, ../app.scss */
+.content p {
+  font-size: 1.5em;
+  max-width: 750px;
+}
+/* line 220, ../app.scss */
+.content ul {
+  list-style: none;
+  padding-left: 0px;
+}
+/* line 224, ../app.scss */
+.content ul li {
+  font-size: 1.5em;
+  padding-top: .5em;
+}
+
+/* line 231, ../app.scss */
+.sub-nav {
+  font-size: 1em;
+  color: #f4d03f;
+}
+/* line 236, ../app.scss */
+.sub-nav .sub-nav-icon {
+  font-size: 1.5em;
+}
+/* line 239, ../app.scss */
+.sub-nav .sub-nav-icon.right-icon {
+  float: right;
+  padding-left: 5px;
+}
+/* line 245, ../app.scss */
+.sub-nav .sub-nav-text {
+  display: block;
+  font-size: .8em;
+  font-style: italic;
+  color: white;
+}
+/* line 250, ../app.scss */
+.sub-nav .sub-nav-text.left-text {
+  padding-left: 2.7em;
+}
+/* line 254, ../app.scss */
+.sub-nav .sub-nav-text.right-text {
+  padding-right: 2.7em;
+}
+/* line 258, ../app.scss */
+.sub-nav i:first-child {
+  padding-right: .5em;
+}
+/* line 262, ../app.scss */
+.sub-nav i:last-child {
+  padding-left: .5em;
+}
+/* line 266, ../app.scss */
+.sub-nav a {
+  font-size: 1.5em;
+}
+/* line 269, ../app.scss */
 .sub-nav a:hover {
   color: #e6e6e6;
 }
 
-/* line 222, ../app.scss */
+/* line 276, ../app.scss */
+.back {
+  margin-bottom: 1em;
+}
+
+/* line 280, ../app.scss */
 .forward {
   text-align: right;
 }
 
-/* line 227, ../app.scss */
-#yesterday-content {
-  text-align: center;
-}
-
 /*----Data Visualizations----------------*/
-/* line 233, ../app.scss */
-.graph {
-  text-align: center;
-}
-/* line 236, ../app.scss */
+/* line 287, ../app.scss */
 .graph h1 {
   font-size: 2em;
-  padding-top: 1.25em;
   margin-bottom: 0;
   line-height: 1.25em;
 }
 
-/* line 244, ../app.scss */
+/* line 294, ../app.scss */
 text.c3-axis-y-label {
   font-size: 1.10em;
 }
