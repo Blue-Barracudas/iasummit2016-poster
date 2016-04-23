@@ -7,13 +7,13 @@
     <title>Let's Compare Notes</title>
 
     <!-- Style -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="js/c3/c3.css" rel="stylesheet" type="text/css">
     <link href="scss/css/app.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="scss/css/font-awesome.min.css">
 
-    <!-- Graph Scripts -->
+    <!-- Scripts -->
     <script src="js/c3/c3.min.js"></script>
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
           <div class="time-node"></div><li><a href="yesterday.html">Yesterday</a></li>
             <ul>
               <li><a href="background.html">Background</a></li>
-              <li><a href="years_exp.html">Years of Experience</a></li>
+              <li><a href="years-exp.html">Years of Experience</a></li>
             </ul>
           <div class="time-node"></div><li><a href="today.html">Today</a></li>
             <ul>
@@ -41,67 +41,66 @@
           <div class="time-node"></div><li><a href="tomorrow.html">Tomorrow</a></li>
             <ul>
               <li><a href="opportunities.html">Opportunities</a></li>
-              <li><a href="future-ux.html">Skills</a></li>
+              <li><a href="skills.html">Skills</a></li>
             </ul>
           <div class="time-node"></div><li><a href="sharing-experiences.html">Sharing Experiences</a></li>
           </ul>
         <div class="about">
           <button data-toggle="modal" data-target="#about-modal">About</button>
         </div>
-        <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="About" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-              </div>
-            <div class="modal-body">
-              <h2>About</h2>
-              <p>This project was accomplished with the help of:</p>
-              <ul>
-                <li>Google Forms/Spreadsheets</li>
-                <li>Twitter Bootstrap</li>
-                <li>d3.js</li>
-                <li>c3.js</li>
-              </ul>
-              <p>Special thanks to every one at IA Summit</p>
-              <ul>
-                <li>Andrew Barrocas @ Sapient Nitro</li>
-                <li>Matt Russell @ IHG</li>
-                <li>Jarrod Thacker @ Campus Labs</li>
-              </ul>
+      </nav>
+
+      <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="About" aria-hidden="true" style="color:#464646">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="about-modal-label">About</h4>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+          <div class="modal-body">
+            <p>This project was accomplished with the help of:</p>
+            <ul>
+              <li>Google Forms/Spreadsheets</li>
+              <li>Twitter Bootstrap</li>
+              <li>d3.js</li>
+              <li>c3.js</li>
+            </ul>
+            <p>Special thanks to every one at IA Summit</p>
+            <ul>
+              <li><a href="https://twitter.com/raggedy_andy75">Andrew Barrocas</a></li>
+              <li><a href="https://twitter.com/mattrussell18">Matt Russell</a></li>
+              <li><a href="https://www.twitter.com/jarrodthacker">Jarrod Thacker</a></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-      </nav>
-
+    </div>
         <div class="container-fluid content">
-            <div class="col-md-10">
+            <div class="col-md-12">
               <h1>Let's Compare Notes<br><span class="sub-title">Sharing Experiences in User Experience</h1>
-              <p>The user experience field owes its success and longevity to the diversity of the people that it's comprised of.</p>
-              <p>For <a href="#">IA Summit 2016's Poster Night</a> (something you should come to), we want to explore and distill a small facet of our collective diversity to share and discuss with our community. So let's talk about our <em>experiences</em> &mdash; our Yesterday, where we've been; our Today, where we are now; and our Tomorrow, where we think and want to go.</p>
+              <p>The user experience field owes its success and longevity to the diversity of the people that it's comprised of. For <a href="http://www.iasummit.org/">IA Summit 2016's Poster Night</a> (something you should come to), we want to explore and distill a small facet of our collective diversity to share and discuss with our community.</p>
+              <p>So let's talk about our <em>experiences</em> &mdash; our Yesterday, where we've been; our Today, where we are now; and our Tomorrow, where we think and want to go.</p>
         </div>
+            <div class="callouts">
               <div class="col-md-6">
-                <h3>Contribute to the Discussion</h3>
+                <h2>Contribute to the Discussion</h2>
                 <p>Have a few minutes? Share your own UX career experiences to join the conversation. This survey will be open through to the end of Poster Night. </p>
-                <a href="#">Take Survey</a>
+                <a class="btn btn-default" href="http://goo.gl/forms/l9OdqlV9MH">Take Survey <i class="fa fa-comment-o" aria-hidden="true"></i></a>
               </div>
 
               <div class="col-md-6">
-                <h3>Already taken the survey?</h3>
+                <h2>Already taken the survey?</h2>
                 <p>Great! Check out the results that we've received so far. The data displayed is being updated live, so check out what your fellow UX'ers have said so far.</p>
-                <a href="yesterday.html">Get started</a>
+                <a class="btn btn-primary" href="yesterday.html">Get Started <i class="fa  fa-arrow-circle-right" aria-hidden="true"> </i></a>
               </div>
+           </div>
           </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
   </body>
 </html>

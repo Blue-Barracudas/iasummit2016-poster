@@ -1,23 +1,54 @@
 $dark-background: #1F2124;
-$side-panel: #383A3F;
+$side-panel: #414345;
 $bright-orange: #F68657;
-$golden-yellow: #F6B352;
+$golden-yellow: #F4D03F;
+$light-red: #F65252;
+
 
 /*----Basic styles----------------*/
 
 body {
-    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
-    background-color: $dark-background;
-    color: #FFFFFF;
+    font-family: 'Lato',  sans-serif;
+    background: #232526;
+    background: -webkit-linear-gradient(to left, #232526 , #414345);
+    background: linear-gradient(to left, #232526 , #414345);
+    color: white;
+}
+
+h1, h2, h3, h4 {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;
+   margin-bottom: .25em;
+   letter-spacing: -1px;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: .85;
+
+  .sub-title {
+    text-transform: uppercase;
+    font-size: 65%;
+  }
+}
+
+h2 {
+   font-size: 2em;
 }
 
 a {
-  color:white;
+  color: $golden-yellow;
+  &:hover {
+     color:white;
+ }
 }
 
-p {
-  font-size: 1.15em;
+
+.modal-body a {
+  color: #464646;
 }
+
+
 
 
 .wrapper {
@@ -25,11 +56,43 @@ p {
   padding-right: 50px;
 }
 
+.btn {
+   font-size: 1.5em;
+   font-weight: 700;
+   border: none;
+   margin-top: .75em;
+   background: transparent;
+
+   &.btn-primary {
+      color: $bright-orange;
+      border: 1px solid $bright-orange;
+      &:hover {
+         color: #FFF;
+         background: $bright-orange;
+      }
+   }
+   &.btn-default {
+      color: $golden-yellow;
+      border: 1px solid $golden-yellow;
+      &:hover {
+         color: #FFF;
+         background: $golden-yellow;
+      }
+   }
+}
+
+.callouts {
+   text-align: center;
+
+   p {
+      text-align: left;
+   }
+}
 /*----Side bar----------------*/
 .timeline {
   list-style: none;
   position: relative;
-  padding-bottom: 250px;
+  padding-bottom: 78px;
  }
 
 .timeline:before {
@@ -38,7 +101,7 @@ p {
  position: absolute;
  content: " ";
  width: 3px;
- background-color: lighten($side-panel, 10%);
+ background-color: #FFF;
  margin-left: -1.5px;
  }
 
@@ -48,7 +111,7 @@ p {
   position: relative;
   top: 38px;
   margin-left: -12px;
-  background-color: lighten($side-panel, 10%);
+  background-color: #FFF;
   z-index: 100;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
@@ -65,9 +128,15 @@ p {
   position: fixed;
   left: 300px;
   height:100%;
-  background-color: $side-panel;
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #232526 , #3A3C3E);
+  background: linear-gradient(to right, #232526 , #3A3C3E);
   margin-left: -300px;
   padding: 0 10px;
+
+  a {
+     color: #FFF;
+ }
 
   a:hover {
     text-decoration: none;
@@ -78,7 +147,7 @@ p {
   }
 
   a.active-link {
-    border-bottom: solid 2px $golden-yellow;
+    border-bottom: solid 3px $golden-yellow;
     display: inline;
     padding-bottom: 1.5px;
 
@@ -89,14 +158,21 @@ p {
   }
 
   & ul {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    letter-spacing: -1px;
     list-style-type: none;
-    // position: relative;
     padding-left: 15px;
+
     & li {
       margin-top:10px;
       padding-left: 20px;
-      font-size: 1.15em;
+      font-size: 1.55em;
     }
+
+    & ul {
+      font-size: .8em;
+   }
   }
 
   .nav-heading {
@@ -115,69 +191,80 @@ p {
     z-index: 1000;
 
     & button {
-      font-size: 1.25em;
+      font-size: 1.50em;
       padding:10px;
       width:100%;
-      background-color: darken($side-panel, 5%);
+      background: #232526;
+      background: -webkit-linear-gradient(to right, #232526 , #3A3C3E);
+      background: linear-gradient(to right, #232526 , #3A3C3E);
       border:0;
-      -webkit-transition: background-color .5s;
-      transition: background-color .5s;
+      -webkit-transition: background-color .25s;
+      transition: background-color .25s;
 
-      & a {
-        text-decoration: none;
-        color: inherit;
-      }
       &:hover {
-        background-color: darken($bright-orange, 10%);
+        background: darken($golden-yellow, 10%);
       }
     }
-  }
 }
-
+}
 /*----Content Area----------------*/
 
 .content {
- padding-top: 5em;
-}
+ padding-top: 2.5em;
 
+ p {
+   font-size: 1.5em;
+   max-width: 750px;
+ }
 
-h1 {
-  margin-bottom: 25px;
-  line-height: .85;
-  // padding-left: 15px;
+ ul {
+   list-style: none;
+   padding-left: 0px;
 
-  .sub-title {
-    text-transform: uppercase;
-    font-size: 65%;
-  }
-
-}
-
-
-.page-title {
-  padding: 10px 50px;
-  background-color: $golden-yellow;
-  margin-bottom: 1.25em;
-
-  & h2 {
-    font-weight: 400;
-    margin-bottom: 0;
-  }
+   & li {
+     font-size: 1.5em;
+     padding-top: .5em;
+   }
+ }
 }
 
 .sub-nav {
-  padding-top: 1.5em;
+  // margin-top: 8em;
+  font-size: 1em;
+  color: $golden-yellow;
 
+  & .sub-nav-icon {
+     font-size: 1.5em;
+
+     &.right-icon {
+        float:right;
+        padding-left: 5px;
+     }
+ }
+
+ & .sub-nav-text {
+    display:block; font-size:.8em;
+    font-style: italic;
+    color: white;
+
+    &.left-text {
+      padding-left: 2.7em;
+   }
+
+   &.right-text {
+      padding-right: 2.7em;
+   }
+}
   & i:first-child {
-    padding-left: .75em;
+    padding-right: .5em;
   }
 
   & i:last-child {
-    padding-right: .75em;
+    padding-left: .5em;
   }
 
   & a {
-    font-size: 1.25em;
+    font-size: 1.5em;
 
     &:hover {
     color: darken(#FFF, 10%);
@@ -187,19 +274,18 @@ h1 {
 }
 
 .back {
+   margin-bottom: 1em;
 }
 
 .forward {
   text-align: right;
 }
 
+
 /*----Data Visualizations----------------*/
 .graph {
-  text-align: center;
-
   & h1 {
     font-size: 2em;
-    padding-top: 1.25em;
     margin-bottom: 0;
     line-height: 1.25em;
   }
