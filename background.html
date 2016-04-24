@@ -51,36 +51,47 @@
           </div>
         </nav>
 
-        <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="About" aria-hidden="true" style="color:#464646">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="about-modal-label">About</h4>
-              </div>
-            <div class="modal-body">
-              <p>This project was accomplished with the help of:</p>
-              <ul>
-                <li>Google Forms/Spreadsheets</li>
-                <li>Twitter Bootstrap</li>
-                <li>d3.js</li>
-                <li>c3.js</li>
-              </ul>
-              <p>Special thanks to every one at IA Summit</p>
-              <ul>
-                <li><a href="https://twitter.com/raggedy_andy75">Andrew Barrocas</a></li>
-                <li><a href="https://twitter.com/mattrussell18">Matt Russell</a></li>
-                <li><a href="https://www.twitter.com/jarrodthacker">Jarrod Thacker</a></li>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+        <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="About" aria-hidden="true">
+         <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+               <h3 class="modal-title" id="about-modal-label">About</h3>
+             </div>
+           <div class="modal-body">
+              <div class="row">
+                 <div class="col-md-6">
+                   <h4>This project was accomplished with the help of:</h4>
+                   <ul>
+                     <li><a href="https://docs.google.com">Google Docs (Forms/Spreadsheets)</a></li>
+                     <li><a href="http://www.getbootstrap.com/">Twitter Bootstrap</a></li>
+                     <li><a href="http://www.lukaszdziedzic.eu/">Łukasz Dziedzic</a>, creator of Lato</li>
+                     <li><a href="http://montserrat.zkysky.com.ar/en">Julieta Ulanovsky</a>, creator of Montserrat</li>
+                     <li><a href="http://www.c3js.org/">Masayuki Tanaka</a>, creator of c3.js (thank you for the great documentation!)</li>
+                     <li><a href="https://clipboardjs.com/">Zeno Rocha</a>, creator of clipboard.js
+                     </li>
+                     <li>The wonderful people at <a href="http://www.iasummit.org/">IA Summit</a></li>
+                   </ul>
+                </div>
+             <div class="col-md-5 col-md-offset-1 creators">
+                <h4>Made Proudly By:</h4>
+                <ul>
+                  <li><a href="https://twitter.com/raggedy_andy75">Andrew Barrocas <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="https://twitter.com/mattrussell18">Matt Russell <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.twitter.com/jarrodthacker">Jarrod Thacker <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                </ul>
+                   <p>Let us know what you think!</p>
+                </div>
+             </div>
           </div>
-        </div>
-      </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+         </div>
+       </div>
+     </div>
 
       <div class="container-fluid content">
          <div class="sub-nav">
@@ -104,7 +115,7 @@
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'Background',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csv',
+                    url: 'https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csv',
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -132,7 +143,16 @@
 
       </div>
     </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+      ga('create', 'UA-76815798-1', 'auto');
+      ga('send', 'pageview');
+
+     </script>
 
 
   </body>
