@@ -20,6 +20,35 @@
     <script src="js/d3/d3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    function createCORSRequest(method, url) {
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr) {
+
+        // Check if the XMLHttpRequest object has a "withCredentials" property.
+        // "withCredentials" only exists on XMLHTTPRequest2 objects.
+        xhr.open(method, url, true);
+
+      } else if (typeof XDomainRequest != "undefined") {
+
+        // Otherwise, check if XDomainRequest.
+        // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+
+      } else {
+
+        // Otherwise, CORS is not supported by the browser.
+        xhr = null;
+
+      }
+      return xhr;
+    }
+
+    var xhr = createCORSRequest('GET', url);
+    if (!xhr) {
+      throw new Error('CORS not supported');
+    }</script>
   </head>
 
   <body>
@@ -115,7 +144,7 @@
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'currentTools',
-                    url: 'http://cors.io/?u=https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1947658518&single=true&output=csv',
+                    url: 'https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1947658518&single=true&output=csv',
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
