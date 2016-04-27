@@ -140,6 +140,7 @@ a {
    }
 }
 
+
 /*----Side bar----------------*/
 .timeline {
   list-style: none;
@@ -325,10 +326,14 @@ a {
 }
 
 .back {
-   margin-bottom: 1em;
+   display: inline-block;
+   // margin-bottom: 1em;
 }
 
 .forward {
+  position: absolute;
+  right: 50px;
+  display: inline-block;
   text-align: right;
 }
 
@@ -357,4 +362,53 @@ a {
 
 text.c3-axis-y-label {
   font-size: 1.10em;
+}
+
+
+// Mobile styling
+/*----Mobile nav-----*/
+.mobile {
+   display: inline-block;
+   font-size: 1.1em;
+   margin-bottom: 1em;
+   color: white;
+}
+
+
+@media only screen and (min-device-width: 1001px) {
+   nav.mobile {
+      display: none;
+   }
+}
+
+@media only screen and (max-device-width: 1000px) {
+   .graph h1 {
+      font-size: 1.5em;
+   }
+   nav.sidebar {
+      display: none;
+   }
+   .sub-nav {
+      a {
+         font-size: 1em;
+      }
+
+   .sub-nav-icon {
+      font-size: 1em;
+   }
+
+   .back {
+      margin-left: 1.5em;
+   }
+   }
+   .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+   }
+}
+
+@media only screen and (max-device-width: 700px) {
+   .sub-nav-text {
+      display: none!important;
+   }
 }
