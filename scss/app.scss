@@ -54,6 +54,7 @@ a {
 .modal {
   font-size: 1.5em;
   color: #464646;
+  z-index: 10000;
 
   & ul {
    list-style: none;
@@ -379,15 +380,46 @@ text.c3-axis-y-label {
    nav.mobile {
       display: none;
    }
+
+   .mobile-close {
+      display: none;
+   }
 }
 
 @media only screen and (max-device-width: 1000px) {
+   nav.mobile {
+      cursor: pointer;
+   }
+
+   .mobile-close {
+      display: block;
+      padding: 15px;
+      text-align: center;
+      font-size: 1em;
+      cursor: pointer;
+   }
+
    .graph h1 {
       font-size: 1.5em;
    }
+   // 
+   // .about {
+   //    font-size: 1em;
+   // }
+
    nav.sidebar {
-      display: none;
+      left: -300px;
    }
+
+   .sidebar ul li {
+      font-size: 1.25em;
+   }
+
+   .mobile-push {
+      left: 300px!important;
+      z-index: 1200;
+   }
+
    .sub-nav {
       a {
          font-size: 1em;

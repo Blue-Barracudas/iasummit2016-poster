@@ -53,63 +53,64 @@ a:hover {
 .modal {
   font-size: 1.5em;
   color: #464646;
+  z-index: 10000;
 }
-/* line 58, ../app.scss */
+/* line 59, ../app.scss */
 .modal ul {
   list-style: none;
   padding-left: 0;
 }
-/* line 62, ../app.scss */
+/* line 63, ../app.scss */
 .modal ul li {
   padding-bottom: 10px;
 }
-/* line 67, ../app.scss */
+/* line 68, ../app.scss */
 .modal a {
   color: #f4d03f;
 }
 
-/* line 72, ../app.scss */
+/* line 73, ../app.scss */
 .modal-body {
   padding: 20px 30px;
 }
 
-/* line 75, ../app.scss */
+/* line 76, ../app.scss */
 .modal-header {
   background: #f4d03f;
 }
-/* line 77, ../app.scss */
+/* line 78, ../app.scss */
 .modal-header button {
   color: #464646;
 }
-/* line 81, ../app.scss */
+/* line 82, ../app.scss */
 .modal-header .close {
   font-size: 30px;
 }
 
-/* line 86, ../app.scss */
+/* line 87, ../app.scss */
 .modal-footer {
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 90, ../app.scss */
+/* line 91, ../app.scss */
 .modal-footer button {
   font-size: 1em;
   color: #464646;
   margin-top: 0;
 }
 
-/* line 98, ../app.scss */
+/* line 99, ../app.scss */
 .creators a {
   color: #f68657;
 }
 
-/* line 106, ../app.scss */
+/* line 107, ../app.scss */
 .wrapper {
   padding-left: 350px;
   padding-right: 50px;
 }
 
-/* line 111, ../app.scss */
+/* line 112, ../app.scss */
 .btn {
   font-size: 1.5em;
   font-weight: 700;
@@ -118,42 +119,42 @@ a:hover {
   background: transparent;
   color: #FFF;
 }
-/* line 119, ../app.scss */
+/* line 120, ../app.scss */
 .btn.btn-default {
   background: #f68657;
 }
-/* line 121, ../app.scss */
+/* line 122, ../app.scss */
 .btn.btn-default:hover {
   color: #FFF;
   background: #f9a987;
 }
-/* line 126, ../app.scss */
+/* line 127, ../app.scss */
 .btn.btn-primary {
   background: #f4d03f;
 }
-/* line 129, ../app.scss */
+/* line 130, ../app.scss */
 .btn.btn-primary:hover {
   background: #f7dc6f;
 }
 
-/* line 135, ../app.scss */
+/* line 136, ../app.scss */
 .callouts {
   text-align: center;
 }
-/* line 138, ../app.scss */
+/* line 139, ../app.scss */
 .callouts p {
   text-align: left;
 }
 
 /*----Side bar----------------*/
-/* line 145, ../app.scss */
+/* line 146, ../app.scss */
 .timeline {
   list-style: none;
   position: relative;
   padding-bottom: 250px;
 }
 
-/* line 151, ../app.scss */
+/* line 152, ../app.scss */
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -164,7 +165,7 @@ a:hover {
   margin-left: -1.5px;
 }
 
-/* line 161, ../app.scss */
+/* line 162, ../app.scss */
 .time-node {
   width: 25px;
   height: 25px;
@@ -179,12 +180,12 @@ a:hover {
   border-bottom-left-radius: 50%;
 }
 
-/* line 175, ../app.scss */
+/* line 176, ../app.scss */
 .active-node {
   background-color: #f4d03f;
 }
 
-/* line 179, ../app.scss */
+/* line 180, ../app.scss */
 .sidebar {
   width: 300px;
   position: fixed;
@@ -196,11 +197,11 @@ a:hover {
   margin-left: -300px;
   padding: 0 10px;
 }
-/* line 190, ../app.scss */
+/* line 191, ../app.scss */
 .sidebar a {
   color: #FFF;
 }
-/* line 194, ../app.scss */
+/* line 195, ../app.scss */
 .sidebar a:hover {
   text-decoration: none;
   color: #FFF;
@@ -208,17 +209,17 @@ a:hover {
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 202, ../app.scss */
+/* line 203, ../app.scss */
 .sidebar a.active-link {
   border-bottom: solid 3px #f4d03f;
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 207, ../app.scss */
+/* line 208, ../app.scss */
 .sidebar a.active-link:hover {
   text-decoration: none;
 }
-/* line 213, ../app.scss */
+/* line 214, ../app.scss */
 .sidebar ul {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
@@ -226,24 +227,24 @@ a:hover {
   list-style-type: none;
   padding-left: 15px;
 }
-/* line 220, ../app.scss */
+/* line 221, ../app.scss */
 .sidebar ul li {
   margin-top: 10px;
   padding-left: 20px;
   font-size: 1.55em;
 }
-/* line 226, ../app.scss */
+/* line 227, ../app.scss */
 .sidebar ul ul {
   font-size: .8em;
 }
-/* line 231, ../app.scss */
+/* line 232, ../app.scss */
 .sidebar .nav-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-/* line 239, ../app.scss */
+/* line 240, ../app.scss */
 .sidebar .about {
   position: fixed;
   bottom: 0px;
@@ -251,7 +252,7 @@ a:hover {
   width: 300px;
   z-index: 1000;
 }
-/* line 246, ../app.scss */
+/* line 247, ../app.scss */
 .sidebar .about button {
   font-size: 1.50em;
   padding: 10px;
@@ -261,84 +262,84 @@ a:hover {
   background: linear-gradient(to right, #232526, #3a3c3e);
   border: 0;
 }
-/* line 257, ../app.scss */
+/* line 258, ../app.scss */
 .sidebar .about button:hover {
   background: #f1c40f;
 }
 
 /*----Content Area----------------*/
-/* line 265, ../app.scss */
+/* line 266, ../app.scss */
 .content {
   padding-top: 2.5em;
 }
-/* line 268, ../app.scss */
+/* line 269, ../app.scss */
 .content p {
   font-size: 1.5em;
   max-width: 800px;
 }
-/* line 273, ../app.scss */
+/* line 274, ../app.scss */
 .content ul {
   list-style: none;
   padding-left: 0px;
 }
-/* line 277, ../app.scss */
+/* line 278, ../app.scss */
 .content ul li {
   font-size: 1.5em;
   padding-top: .5em;
 }
 
-/* line 284, ../app.scss */
+/* line 285, ../app.scss */
 .sub-nav {
   font-size: 1em;
   color: #f4d03f;
 }
-/* line 288, ../app.scss */
+/* line 289, ../app.scss */
 .sub-nav .sub-nav-icon {
   font-size: 1.5em;
 }
-/* line 291, ../app.scss */
+/* line 292, ../app.scss */
 .sub-nav .sub-nav-icon.right-icon {
   float: right;
   padding-left: 5px;
 }
-/* line 297, ../app.scss */
+/* line 298, ../app.scss */
 .sub-nav .sub-nav-text {
   display: block;
   font-size: .8em;
   font-style: italic;
   color: white;
 }
-/* line 302, ../app.scss */
+/* line 303, ../app.scss */
 .sub-nav .sub-nav-text.left-text {
   padding-left: 2.7em;
 }
-/* line 306, ../app.scss */
+/* line 307, ../app.scss */
 .sub-nav .sub-nav-text.right-text {
   padding-right: 2.7em;
 }
-/* line 310, ../app.scss */
+/* line 311, ../app.scss */
 .sub-nav i:first-child {
   padding-right: .5em;
 }
-/* line 314, ../app.scss */
+/* line 315, ../app.scss */
 .sub-nav i:last-child {
   padding-left: .5em;
 }
-/* line 318, ../app.scss */
+/* line 319, ../app.scss */
 .sub-nav a {
   font-size: 1.5em;
 }
-/* line 321, ../app.scss */
+/* line 322, ../app.scss */
 .sub-nav a:hover {
   color: #e6e6e6;
 }
 
-/* line 328, ../app.scss */
+/* line 329, ../app.scss */
 .back {
   display: inline-block;
 }
 
-/* line 333, ../app.scss */
+/* line 334, ../app.scss */
 .forward {
   position: absolute;
   right: 50px;
@@ -346,34 +347,34 @@ a:hover {
   text-align: right;
 }
 
-/* line 340, ../app.scss */
+/* line 341, ../app.scss */
 .interstitial {
   text-align: center;
 }
-/* line 343, ../app.scss */
+/* line 344, ../app.scss */
 .interstitial p {
   max-width: none;
 }
-/* line 347, ../app.scss */
+/* line 348, ../app.scss */
 .interstitial a {
   font-size: 1.5em;
 }
 
 /*----Data Visualizations----------------*/
-/* line 356, ../app.scss */
+/* line 357, ../app.scss */
 .graph h1 {
   font-size: 2em;
   margin-bottom: 0;
   line-height: 1.25em;
 }
 
-/* line 363, ../app.scss */
+/* line 364, ../app.scss */
 text.c3-axis-y-label {
   font-size: 1.10em;
 }
 
 /*----Mobile nav-----*/
-/* line 370, ../app.scss */
+/* line 371, ../app.scss */
 .mobile {
   display: inline-block;
   font-size: 1.1em;
@@ -382,43 +383,73 @@ text.c3-axis-y-label {
 }
 
 @media only screen and (min-device-width: 1001px) {
-  /* line 379, ../app.scss */
+  /* line 380, ../app.scss */
   nav.mobile {
+    display: none;
+  }
+
+  /* line 384, ../app.scss */
+  .mobile-close {
     display: none;
   }
 }
 @media only screen and (max-device-width: 1000px) {
-  /* line 385, ../app.scss */
+  /* line 390, ../app.scss */
+  nav.mobile {
+    cursor: pointer;
+  }
+
+  /* line 394, ../app.scss */
+  .mobile-close {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  /* line 402, ../app.scss */
   .graph h1 {
     font-size: 1.5em;
   }
 
-  /* line 388, ../app.scss */
+  /* line 410, ../app.scss */
   nav.sidebar {
-    display: none;
+    left: -300px;
   }
 
-  /* line 392, ../app.scss */
+  /* line 414, ../app.scss */
+  .sidebar ul li {
+    font-size: 1.25em;
+  }
+
+  /* line 418, ../app.scss */
+  .mobile-push {
+    left: 300px!important;
+    z-index: 1200;
+  }
+
+  /* line 424, ../app.scss */
   .sub-nav a {
     font-size: 1em;
   }
-  /* line 396, ../app.scss */
+  /* line 428, ../app.scss */
   .sub-nav .sub-nav-icon {
     font-size: 1em;
   }
-  /* line 400, ../app.scss */
+  /* line 432, ../app.scss */
   .sub-nav .back {
     margin-left: 1.5em;
   }
 
-  /* line 404, ../app.scss */
+  /* line 436, ../app.scss */
   .wrapper {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
 @media only screen and (max-device-width: 700px) {
-  /* line 411, ../app.scss */
+  /* line 443, ../app.scss */
   .sub-nav-text {
     display: none!important;
   }
