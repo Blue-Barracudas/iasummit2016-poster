@@ -49,67 +49,73 @@ a:hover {
   color: white;
 }
 
-/* line 54, ../app.scss */
+/* line 53, ../app.scss */
+img {
+  margin-top: 1.5em;
+}
+
+/* line 58, ../app.scss */
 .modal {
   font-size: 1.5em;
   color: #464646;
+  z-index: 10000;
 }
-/* line 58, ../app.scss */
+/* line 63, ../app.scss */
 .modal ul {
   list-style: none;
   padding-left: 0;
 }
-/* line 62, ../app.scss */
+/* line 67, ../app.scss */
 .modal ul li {
   padding-bottom: 10px;
 }
-/* line 67, ../app.scss */
+/* line 72, ../app.scss */
 .modal a {
   color: #f4d03f;
 }
 
-/* line 72, ../app.scss */
+/* line 77, ../app.scss */
 .modal-body {
   padding: 20px 30px;
 }
 
-/* line 75, ../app.scss */
+/* line 80, ../app.scss */
 .modal-header {
   background: #f4d03f;
 }
-/* line 77, ../app.scss */
+/* line 82, ../app.scss */
 .modal-header button {
   color: #464646;
 }
-/* line 81, ../app.scss */
+/* line 86, ../app.scss */
 .modal-header .close {
   font-size: 30px;
 }
 
-/* line 86, ../app.scss */
+/* line 91, ../app.scss */
 .modal-footer {
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 90, ../app.scss */
+/* line 95, ../app.scss */
 .modal-footer button {
   font-size: 1em;
   color: #464646;
   margin-top: 0;
 }
 
-/* line 98, ../app.scss */
+/* line 103, ../app.scss */
 .creators a {
   color: #f68657;
 }
 
-/* line 106, ../app.scss */
+/* line 111, ../app.scss */
 .wrapper {
   padding-left: 350px;
   padding-right: 50px;
 }
 
-/* line 111, ../app.scss */
+/* line 116, ../app.scss */
 .btn {
   font-size: 1.5em;
   font-weight: 700;
@@ -118,42 +124,42 @@ a:hover {
   background: transparent;
   color: #FFF;
 }
-/* line 119, ../app.scss */
+/* line 124, ../app.scss */
 .btn.btn-default {
   background: #f68657;
 }
-/* line 121, ../app.scss */
+/* line 126, ../app.scss */
 .btn.btn-default:hover {
   color: #FFF;
   background: #f9a987;
 }
-/* line 126, ../app.scss */
+/* line 131, ../app.scss */
 .btn.btn-primary {
   background: #f4d03f;
 }
-/* line 129, ../app.scss */
+/* line 134, ../app.scss */
 .btn.btn-primary:hover {
   background: #f7dc6f;
 }
 
-/* line 135, ../app.scss */
+/* line 140, ../app.scss */
 .callouts {
   text-align: center;
 }
-/* line 138, ../app.scss */
+/* line 143, ../app.scss */
 .callouts p {
   text-align: left;
 }
 
 /*----Side bar----------------*/
-/* line 144, ../app.scss */
+/* line 150, ../app.scss */
 .timeline {
   list-style: none;
   position: relative;
-  padding-bottom: 250px;
+  padding-bottom: 180px;
 }
 
-/* line 150, ../app.scss */
+/* line 156, ../app.scss */
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -164,7 +170,7 @@ a:hover {
   margin-left: -1.5px;
 }
 
-/* line 160, ../app.scss */
+/* line 166, ../app.scss */
 .time-node {
   width: 25px;
   height: 25px;
@@ -179,12 +185,12 @@ a:hover {
   border-bottom-left-radius: 50%;
 }
 
-/* line 174, ../app.scss */
+/* line 180, ../app.scss */
 .active-node {
   background-color: #f4d03f;
 }
 
-/* line 178, ../app.scss */
+/* line 184, ../app.scss */
 .sidebar {
   width: 300px;
   position: fixed;
@@ -196,11 +202,11 @@ a:hover {
   margin-left: -300px;
   padding: 0 10px;
 }
-/* line 189, ../app.scss */
+/* line 198, ../app.scss */
 .sidebar a {
   color: #FFF;
 }
-/* line 193, ../app.scss */
+/* line 202, ../app.scss */
 .sidebar a:hover {
   text-decoration: none;
   color: #FFF;
@@ -208,17 +214,17 @@ a:hover {
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 201, ../app.scss */
+/* line 210, ../app.scss */
 .sidebar a.active-link {
   border-bottom: solid 3px #f4d03f;
   display: inline;
   padding-bottom: 1.5px;
 }
-/* line 206, ../app.scss */
+/* line 215, ../app.scss */
 .sidebar a.active-link:hover {
   text-decoration: none;
 }
-/* line 212, ../app.scss */
+/* line 221, ../app.scss */
 .sidebar ul {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
@@ -226,24 +232,24 @@ a:hover {
   list-style-type: none;
   padding-left: 15px;
 }
-/* line 219, ../app.scss */
+/* line 228, ../app.scss */
 .sidebar ul li {
   margin-top: 10px;
   padding-left: 20px;
   font-size: 1.55em;
 }
-/* line 225, ../app.scss */
+/* line 234, ../app.scss */
 .sidebar ul ul {
   font-size: .8em;
 }
-/* line 230, ../app.scss */
+/* line 239, ../app.scss */
 .sidebar .nav-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-/* line 238, ../app.scss */
+/* line 247, ../app.scss */
 .sidebar .about {
   position: fixed;
   bottom: 0px;
@@ -251,7 +257,7 @@ a:hover {
   width: 300px;
   z-index: 1000;
 }
-/* line 245, ../app.scss */
+/* line 254, ../app.scss */
 .sidebar .about button {
   font-size: 1.50em;
   padding: 10px;
@@ -261,110 +267,271 @@ a:hover {
   background: linear-gradient(to right, #232526, #3a3c3e);
   border: 0;
 }
-/* line 256, ../app.scss */
+/* line 265, ../app.scss */
 .sidebar .about button:hover {
   background: #f1c40f;
 }
 
 /*----Content Area----------------*/
-/* line 264, ../app.scss */
+/* line 273, ../app.scss */
 .content {
   padding-top: 2.5em;
 }
-/* line 267, ../app.scss */
+/* line 276, ../app.scss */
 .content p {
   font-size: 1.5em;
-  max-width: 800px;
 }
-/* line 272, ../app.scss */
+/* line 280, ../app.scss */
 .content ul {
   list-style: none;
   padding-left: 0px;
 }
-/* line 276, ../app.scss */
+/* line 284, ../app.scss */
 .content ul li {
   font-size: 1.5em;
   padding-top: .5em;
 }
 
-/* line 283, ../app.scss */
+/* line 291, ../app.scss */
 .sub-nav {
   font-size: 1em;
   color: #f4d03f;
 }
-/* line 287, ../app.scss */
+/* line 295, ../app.scss */
 .sub-nav .sub-nav-icon {
   font-size: 1.5em;
 }
-/* line 290, ../app.scss */
+/* line 298, ../app.scss */
 .sub-nav .sub-nav-icon.right-icon {
   float: right;
   padding-left: 5px;
 }
-/* line 296, ../app.scss */
+/* line 304, ../app.scss */
 .sub-nav .sub-nav-text {
   display: block;
   font-size: .8em;
   font-style: italic;
   color: white;
 }
-/* line 301, ../app.scss */
+/* line 309, ../app.scss */
 .sub-nav .sub-nav-text.left-text {
   padding-left: 2.7em;
 }
-/* line 305, ../app.scss */
+/* line 313, ../app.scss */
 .sub-nav .sub-nav-text.right-text {
   padding-right: 2.7em;
 }
-/* line 309, ../app.scss */
+/* line 317, ../app.scss */
 .sub-nav i:first-child {
   padding-right: .5em;
 }
-/* line 313, ../app.scss */
+/* line 321, ../app.scss */
 .sub-nav i:last-child {
   padding-left: .5em;
 }
-/* line 317, ../app.scss */
+/* line 325, ../app.scss */
 .sub-nav a {
   font-size: 1.5em;
 }
-/* line 320, ../app.scss */
+/* line 328, ../app.scss */
 .sub-nav a:hover {
   color: #e6e6e6;
 }
 
-/* line 327, ../app.scss */
+/* line 335, ../app.scss */
 .back {
-  margin-bottom: 1em;
+  display: inline-block;
 }
 
-/* line 331, ../app.scss */
+/* line 340, ../app.scss */
 .forward {
+  position: absolute;
+  right: 50px;
+  display: inline-block;
   text-align: right;
 }
 
-/* line 335, ../app.scss */
+/* line 347, ../app.scss */
 .interstitial {
   text-align: center;
 }
-/* line 338, ../app.scss */
-.interstitial p {
-  max-width: none;
+/* line 349, ../app.scss */
+.interstitial img {
+  max-width: 300px;
 }
-/* line 342, ../app.scss */
+/* line 352, ../app.scss */
+.interstitial p {
+  margin: 15px auto;
+}
+/* line 356, ../app.scss */
 .interstitial a {
   font-size: 1.5em;
 }
 
 /*----Data Visualizations----------------*/
-/* line 351, ../app.scss */
+/* line 365, ../app.scss */
 .graph h1 {
   font-size: 2em;
   margin-bottom: 0;
   line-height: 1.25em;
 }
 
-/* line 358, ../app.scss */
+/* line 372, ../app.scss */
 text.c3-axis-y-label {
   font-size: 1.10em;
+}
+
+/*----Mobile nav-----*/
+/* line 379, ../app.scss */
+.mobile {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: white;
+}
+
+@media only screen and (min-width: 1001px) {
+  /* line 388, ../app.scss */
+  nav.mobile {
+    display: none;
+  }
+
+  /* line 392, ../app.scss */
+  .mobile-close {
+    display: none;
+  }
+
+  /* line 397, ../app.scss */
+  p {
+    max-width: 900px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  /* line 403, ../app.scss */
+  nav.mobile {
+    cursor: pointer;
+  }
+
+  /* line 407, ../app.scss */
+  .mobile-close {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* line 416, ../app.scss */
+  .hover-color {
+    color: #f4d03f;
+  }
+
+  /* line 420, ../app.scss */
+  h1 {
+    font-size: 2.25em;
+  }
+
+  /* line 424, ../app.scss */
+  h2 {
+    font-size: 1.75em;
+  }
+
+  /* line 428, ../app.scss */
+  .content p {
+    font-size: 1.25em;
+  }
+
+  /* line 432, ../app.scss */
+  #main-page-content {
+    padding-top: 0;
+  }
+
+  /* line 435, ../app.scss */
+  .graph h1 {
+    font-size: 1.5em;
+  }
+
+  /* line 439, ../app.scss */
+  .about {
+    font-size: 1em;
+  }
+
+  /* line 443, ../app.scss */
+  nav.sidebar {
+    left: -300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0;
+  }
+  /* line 449, ../app.scss */
+  nav.sidebar .about {
+    position: relative;
+    width: 290px;
+  }
+  /* line 454, ../app.scss */
+  nav.sidebar .timeline {
+    padding-bottom: 40px;
+  }
+
+  /* line 459, ../app.scss */
+  .sidebar ul li {
+    font-size: 1.35em;
+  }
+
+  /* line 463, ../app.scss */
+  .content {
+    margin-bottom: 20px;
+  }
+
+  /* line 466, ../app.scss */
+  .mobile-push {
+    left: 300px!important;
+    z-index: 1200;
+  }
+
+  /* line 472, ../app.scss */
+  .sub-nav a {
+    font-size: 1.35em;
+  }
+  /* line 475, ../app.scss */
+  .sub-nav .sub-nav-icon {
+    font-size: 1.35em;
+  }
+  /* line 478, ../app.scss */
+  .sub-nav .back {
+    margin-left: 1em;
+  }
+
+  /* line 485, ../app.scss */
+  .wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /* line 492, ../app.scss */
+  .sub-nav-text {
+    display: none!important;
+  }
+
+  /* line 496, ../app.scss */
+  .forward {
+    padding-top: 2px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  /* line 502, ../app.scss */
+  .mobile {
+    display: block;
+  }
+
+  /* line 505, ../app.scss */
+  .forward {
+    padding-top: 0px;
+  }
+
+  /* line 509, ../app.scss */
+  .back {
+    margin-left: 0px!important;
+  }
 }
