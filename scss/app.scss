@@ -275,7 +275,6 @@ img {
 
  p {
    font-size: 1.5em;
-   max-width: 800px;
  }
 
  ul {
@@ -347,9 +346,11 @@ img {
 
 .interstitial {
    text-align: center;
-
-   & p {
-      max-width: none;
+   & img {
+      max-width: 300px;
+   }
+    & p {
+      margin: 15px auto;
    }
 
    & a {
@@ -391,6 +392,10 @@ text.c3-axis-y-label {
    .mobile-close {
       display: none;
 
+   }
+
+   p {
+      max-width: 900px;
    }
 }
 
