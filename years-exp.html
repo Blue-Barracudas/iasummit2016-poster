@@ -116,35 +116,14 @@
           <script>
             var chart = c3.generate({
                 bindto: '#yearsExp',
-                size: {height:600},
-                padding: {right:100, left:70, top:25, bottom:25},
-                legend: {show:false},
-                color: {pattern: ['#F4D03F']},
+                size: {height: 450},
                 data: {
-                    x : 'yearsExp',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=87089168&single=true&output=csv',
-                    type: 'bar',
-                  },
-                grid: {x: {show: true}},
-                axis: {
-                  x: {
-                    type:'category',
-                    tick: {
-                      multiline:false,
-                    },
-                  },
-                  y: {
-                    label: {
-                       text: '# of Respondents',
-                       position: 'outer-center',
-                    }
-                  },
-                  rotated: true,
-                },
-                bar: {
-                  width: 30,
-                }
-            });
+                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1214121046&single=true&output=csv',
+                    type: 'pie',
+                 },
+                 color: {pattern: ['#F4D03F', '#F68657', '#F65252']},
+              });
+
           </script>
 
       </div>

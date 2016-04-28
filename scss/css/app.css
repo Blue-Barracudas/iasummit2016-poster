@@ -535,4 +535,14 @@ text.c3-axis-y-label {
   .back {
     margin-left: 0px!important;
   }
+
+  /* line 514, ../app.scss */
+  text.c3-axis-y-label {
+    font-size: .85em;
+  }
+
+  /* line 517, ../app.scss */
+  .c3 text {
+    font-size: .85em;
+  }
 }
