@@ -228,7 +228,7 @@ img {
 .sidebar ul {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
-  letter-spacing: -1px;
+  letter-spacing: -0.8px;
   list-style-type: none;
   padding-left: 15px;
 }
