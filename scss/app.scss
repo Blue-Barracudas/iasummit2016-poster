@@ -50,10 +50,15 @@ a {
  }
 }
 
+img {
+   margin-top: 1.5em;
+}
+
 // Modal styling
 .modal {
   font-size: 1.5em;
   color: #464646;
+  z-index: 10000;
 
   & ul {
    list-style: none;
@@ -140,11 +145,12 @@ a {
    }
 }
 
+
 /*----Side bar----------------*/
 .timeline {
   list-style: none;
   position: relative;
-  padding-bottom: 250px;
+  padding-bottom: 180px;
  }
 
 .timeline:before {
@@ -185,6 +191,9 @@ a {
   background: linear-gradient(to right, #232526 , #3A3C3E);
   margin-left: -300px;
   padding: 0 10px;
+  // overflow: scroll;
+  // overflow-x: hidden;
+
 
   a {
      color: #FFF;
@@ -325,10 +334,14 @@ a {
 }
 
 .back {
-   margin-bottom: 1em;
+   display: inline-block;
+   // margin-bottom: 1em;
 }
 
 .forward {
+  position: absolute;
+  right: 50px;
+  display: inline-block;
   text-align: right;
 }
 
@@ -357,4 +370,138 @@ a {
 
 text.c3-axis-y-label {
   font-size: 1.10em;
+}
+
+
+// Mobile styling
+/*----Mobile nav-----*/
+.mobile {
+   display: inline-block;
+   font-size: 1.5em;
+   margin-bottom: 1em;
+   color: white;
+}
+
+
+@media only screen and (min-width: 1001px) {
+   nav.mobile {
+      display: none;
+   }
+
+   .mobile-close {
+      display: none;
+
+   }
+}
+
+@media only screen and (max-width: 1000px) {
+   nav.mobile {
+      cursor: pointer;
+   }
+
+   .mobile-close {
+      display: block;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+      cursor: pointer;
+
+   }
+
+   .hover-color {
+      color: $golden-yellow;
+   }
+
+   h1 {
+      font-size: 2.25em;
+   }
+
+   h2 {
+      font-size: 1.75em;
+   }
+
+   .content p {
+      font-size: 1.25em;
+   }
+
+   #main-page-content {
+      padding-top: 0;
+   }
+   .graph h1 {
+      font-size: 1.5em;
+   }
+
+   .about {
+      font-size: 1em;
+   }
+
+   nav.sidebar {
+      left: -300px;
+      overflow: scroll;
+      overflow-x: hidden;
+      padding: 0;
+
+      & .about {
+         position:relative;
+         width: 290px;
+      }
+
+      & .timeline {
+         padding-bottom: 40px;
+      }
+   }
+
+   .sidebar ul li {
+      font-size: 1.35em;
+   }
+
+   .content {
+      margin-bottom: 20px;
+   }
+   .mobile-push {
+      left: 300px!important;
+      z-index: 1200;
+   }
+
+   .sub-nav {
+      & a {
+         font-size: 1.35em;
+      }
+      & .sub-nav-icon {
+         font-size: 1.35em;
+      }
+      & .back {
+         margin-left: 1em;
+      }
+
+   }
+
+
+   .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+   }
+}
+
+@media only screen and (max-width: 700px) {
+   .sub-nav-text {
+      display: none!important;
+   }
+
+   .forward {
+      padding-top: 2px;
+   }
+}
+
+@media only screen and (max-width: 450px) {
+   .mobile {
+      display: block;
+   }
+   .forward {
+      padding-top: 0px;
+   }
+
+   .back {
+      margin-left: 0px!important;
+   }
 }
