@@ -3,8 +3,28 @@ $side-panel: #414345;
 $bright-orange: #F68657;
 $golden-yellow: #F4D03F;
 $light-red: #F65252;
+// #00B16A
+// #1E8BC3
+// #F64747
+// #363644
 
+// #d7191c
+// #fdae61
+// #ffffbf
+// #abdda4
+// #2b83ba
 
+// #feedde
+// #fdbe85
+// #fd8d3c
+// #e6550d
+// #a63603
+
+// #05668D
+// #028090
+// #00A896
+// #02C39A
+// #F0F3BD
 /*----Basic styles----------------*/
 
 #success {
@@ -374,6 +394,13 @@ text.c3-axis-y-label {
   font-size: 1.10em;
 }
 
+#yearsExpMobile {
+   display: none;
+}
+
+#positionMobile {
+   display: none;
+}
 
 // Mobile styling
 /*----Mobile nav-----*/
@@ -398,6 +425,7 @@ text.c3-axis-y-label {
    p {
       max-width: 900px;
    }
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -434,7 +462,7 @@ text.c3-axis-y-label {
       padding-top: 0;
    }
    .graph h1 {
-      font-size: 1.5em;
+      font-size: 2em;
    }
 
    .about {
@@ -482,10 +510,12 @@ text.c3-axis-y-label {
 
    }
 
-
    .wrapper {
       padding-left: 0px;
       padding-right: 0px;
+   }
+   .graph {
+      text-align: center;
    }
 }
 
@@ -497,17 +527,53 @@ text.c3-axis-y-label {
    .forward {
       padding-top: 2px;
    }
+
 }
 
 @media only screen and (max-width: 450px) {
+   .graph h1 {
+      font-size: 1.5em;
+   }
+
+   .sub-nav {
+      & a {
+         font-size: 1.15em;
+      }
+   }
+
+   .forward {
+      padding-top: 3px;
+   }
+
    .mobile {
       display: block;
-   }
-   .forward {
-      padding-top: 0px;
    }
 
    .back {
       margin-left: 0px!important;
+   }
+
+   text.c3-axis-y-label {
+     font-size: .85em;
+   }
+   .c3 text {
+      font-size: .75em;
+   }
+
+   // Years Experience
+   #yearsExpMobile {
+      display: block;
+   }
+   #yearsExp {
+      display: none;
+   }
+
+   // Position
+   #position {
+      display: none;
+   }
+
+   #positionMobile {
+      display: block;
    }
 }
