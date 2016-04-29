@@ -113,8 +113,11 @@
           <div class="graph col-sm-12">
             <h1>What best describes your current job title?</h1>
             <div id="position"></div>
+            <div id="positionMobile"></div>
+
           </div>
           <script>
+            var positionURL = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv';
             var chart = c3.generate({
                 bindto: '#position',
                 size: {height:600},
@@ -123,7 +126,7 @@
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'jobTitle',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv',
+                    url: positionURL,
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -138,6 +141,41 @@
                     label: {
                        text: '# of Respondents',
                        position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: {
+                    ratio: .50,},
+                }
+            });
+
+            var chart = c3.generate({
+                bindto: '#positionMobile',
+                size: {height:300},
+                padding: {top:15},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'jobTitle',
+                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv',
+                    type: 'bar',
+                 },
+               //  grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       show: false,
+                     //   text: '# of Respondents',
+                     //   position: 'outer-middle',
                     }
                   },
                   rotated: true,

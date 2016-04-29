@@ -112,18 +112,35 @@
           <div class="graph col-md-12">
             <h1>How many years have you been working in UX?</h1>
             <div id="yearsExp"></div>
+            <div id="yearsExpMobile"></div>
+
           </div>
           <script>
+            var url = "https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1214121046&single=true&output=csv";
+
             var chart = c3.generate({
                 bindto: '#yearsExp',
-                size: {height: 450},
+                size: {height: 430},
+                padding: {top:10},
                 data: {
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1214121046&single=true&output=csv',
+                    url: url,
                     type: 'pie',
                  },
-                 color: {pattern: ['#F4D03F', '#F68657', '#F65252']},
-              });
+                 legend: {
+                    position: 'right',
+                 },
+                 color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F']},
+           });
 
+             var chartMobile = c3.generate({
+                 bindto: '#yearsExpMobile',
+                 size: {height: 300},
+                 data: {
+                    url: url,
+                    type: 'pie',
+                 },
+                 color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F']},
+             });
           </script>
 
       </div>
