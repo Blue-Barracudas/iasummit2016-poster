@@ -3,28 +3,32 @@ $side-panel: #414345;
 $bright-orange: #F68657;
 $golden-yellow: #F4D03F;
 $light-red: #F65252;
-// #00B16A
-// #1E8BC3
-// #F64747
-// #363644
-
-// #d7191c
-// #fdae61
-// #ffffbf
-// #abdda4
-// #2b83ba
-
-// #feedde
-// #fdbe85
-// #fd8d3c
-// #e6550d
-// #a63603
 
 // #05668D
 // #028090
 // #00A896
 // #02C39A
 // #F0F3BD
+
+// #9de1fb
+// #9bf2fd
+// #fa9e9e
+// #9afee8
+// #f9e79f
+//
+//
+// #05668D
+// #028090
+// #F65252
+// #02C39A
+// #F4D03F
+//
+// #04597b
+// #036f7d
+// #910808
+// #017e63
+// #c09c0c
+
 /*----Basic styles----------------*/
 
 #success {
@@ -379,10 +383,15 @@ img {
    }
 }
 
+#share-button {
+   margin-bottom: 15px;
+}
 
 /*----Data Visualizations----------------*/
 
 .graph {
+   // text-align: center;
+
   & h1 {
     font-size: 2em;
     margin-bottom: 0;
@@ -394,6 +403,23 @@ text.c3-axis-y-label {
   font-size: 1.10em;
 }
 
+text.c3-chart-arcs-title {
+   fill: #FFF;
+   font-size: .9em;
+}
+
+#industry-wrapper {
+   text-align: center;
+   margin-top: 10px;
+
+   & span {
+   display: inline-block;
+   font-size:1em;
+   margin-top: 15px;
+   margin-left: 15px;
+   }
+}
+
 #yearsExpMobile {
    display: none;
 }
@@ -402,7 +428,31 @@ text.c3-axis-y-label {
    display: none;
 }
 
+#describeBackgroundMobile {
+   display: none;
+}
+
+#industryMobile {
+   display: none;
+}
+
+#toolsMobile {
+   display: none;
+}
+
+#tasksMobile {
+   display: none;
+}
+
+#growthAreasMobile {
+   display: none;
+}
+
+#futureSkillsMobile {
+   display: none;
+}
 // Mobile styling
+
 /*----Mobile nav-----*/
 .mobile {
    display: inline-block;
@@ -527,6 +577,9 @@ text.c3-axis-y-label {
    .forward {
       padding-top: 2px;
    }
+   .tick text {
+     font-size: .8em;
+   }
 
 }
 
@@ -556,9 +609,26 @@ text.c3-axis-y-label {
    text.c3-axis-y-label {
      font-size: .85em;
    }
-   .c3 text {
-      font-size: .75em;
+
+   .c3-axis-x-label text {
+     font-size: .85em;
    }
+
+   .c3 text {
+      font-size: .65em;
+   }
+   .c3-axis-y text {
+      font-size: .60em;
+   }
+
+   .c3-chart-arcs-title {
+      font-size: .8em;
+   }
+
+   #share-button {
+      margin-bottom: 15px;
+   }
+
 
    // Years Experience
    #yearsExpMobile {
@@ -574,6 +644,59 @@ text.c3-axis-y-label {
    }
 
    #positionMobile {
+      display: block;
+   }
+
+   // Background
+   #describeBackgroundMobile {
+      display: block;
+   }
+   #describeBackground {
+      display: none;
+   }
+
+   // Organization
+   #industry {
+      display: none;
+   }
+   #industryMobile {
+      display: block;
+   }
+
+
+// Tasks
+   #tasks {
+      display: none;
+   }
+
+   #tasksMobile {
+      display: block;
+   }
+
+// Tools
+   #tools {
+      display: none;
+   }
+
+   #toolsMobile {
+      display: block;
+   }
+
+   // Opportunities
+   #growthAreas {
+      display: none;
+   }
+
+   #growthAreasMobile {
+      display: block;
+   }
+
+// Future skills
+   #futureSkills {
+      display: none;
+   }
+
+   #futureSkillsMobile {
       display: block;
    }
 }

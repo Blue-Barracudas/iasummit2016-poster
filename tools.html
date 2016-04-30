@@ -112,8 +112,11 @@
           <div class="graph col-sm-12">
             <h1>What tools do you use?</h1>
             <div id="tools"></div>
+            <div id="toolsMobile"></div>
           </div>
           <script>
+            var urlTools = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1947658518&single=true&output=csv';
+
             var chart = c3.generate({
                 bindto: '#tools',
                 size: {height:600},
@@ -122,7 +125,7 @@
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'currentTools',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1947658518&single=true&output=csv',
+                    url: urlTools,
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -137,6 +140,40 @@
                     label: {
                        text: '# of Respondents',
                        position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: {
+                    ratio: .5,
+                  }                 }
+            });
+
+            var chart = c3.generate({
+                bindto: '#toolsMobile',
+                size: {height:400},
+                padding: {right:50, left:100, top:25, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'currentTools',
+                    url: urlTools,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-middle',
                     }
                   },
                   rotated: true,

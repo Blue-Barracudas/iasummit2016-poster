@@ -113,39 +113,34 @@
           <div class="graph col-sm-12">
             <h1>Which area do you think UX professionals will be most needed in the next 5 - 10 years?</h1>
             <div id="growthAreas"></div>
+            <div id="growthAreasMobile"></div>
+
           </div>
           <script>
+            var urlOpps = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1352797638&single=true&output=csv';
             var chart = c3.generate({
                 bindto: '#growthAreas',
-                size: {height:600},
-                padding: {right:100, left:125, top:25, bottom:25},
-                legend: {show:false},
-                color: {pattern: ['#F4D03F']},
+                size: {height: 430},
+                padding: {top:10},
                 data: {
-                    x : 'growthAreas',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1465327569&single=true&output=csv',
-                    type: 'bar',
-                  },
-                grid: {x: {show: true}},
-                axis: {
-                  x: {
-                    type:'category',
-                    tick: {
-                      multiline:false,
-                    },
-                  },
-                  y: {
-                    label: {
-                       text: '# of Respondents',
-                       position: 'outer-center',
-                    }
-                  },
-                  rotated: true,
-                },
-                bar: {
-                  width: 30,
-                }
-            });
+                    url: urlOpps,
+                    type: 'pie',
+                 },
+                 legend: {
+                    position: 'right',
+                 },
+                 color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F', '#910808', '#017e63']},
+           });
+
+             var chartMobile = c3.generate({
+                 bindto: '#growthAreasMobile',
+                 size: {height: 300},
+                 data: {
+                    url: urlOpps,
+                    type: 'pie',
+                 },
+                 color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F', '#910808', '#017e63']},
+             });
           </script>
 
 

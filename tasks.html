@@ -114,17 +114,21 @@
           <div class="graph col-sm-12">
             <h1>What tasks do you often perform?</h1>
             <div id="tasks"></div>
+            <div id="tasksMobile"></div>
+
           </div>
           <script>
-            var chart = c3.generate({
+            var urlTasks = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1822938404&single=true&output=csv';
+
+            var taskChart = c3.generate({
                 bindto: '#tasks',
                 size: {height:600},
-                padding: {right:50, left:300, top:30, bottom:25},
+                padding: {right:50, left:75, top:30, bottom:25},
                 legend: {show:false},
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'tasks',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1822938404&single=true&output=csv',
+                    url: urlTasks,
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -133,19 +137,56 @@
                     type:'category',
                     tick: {
                       multiline:false,
+                      rotate: 90,
                     },
                   },
                   y: {
                     label: {
                        text: '# of Respondents',
-                       position: 'outer-center',
+                       position: 'outer-middle',
+
                     }
                   },
-                  rotated: true,
+                  rotated: false,
                 },
                 bar: {
                   width: {
-                    ratio: .75,},
+                    ratio: .50,},
+                }
+            });
+
+            var taskChartMobile = c3.generate({
+                bindto: '#tasksMobile',
+                size: {height:400},
+                padding: {top:30},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'tasks',
+                    url: urlTasks,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-middle',
+
+                    }
+                  },
+                  rotated: false,
+                },
+                bar: {
+                  width: {
+                    ratio: .30,},
                 }
             });
           </script>

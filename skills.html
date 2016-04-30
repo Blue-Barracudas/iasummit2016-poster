@@ -111,19 +111,23 @@
           <div class="graph col-md-12">
             <h1>What skills do you think UX'ers will need to have in field you previously selected?</h1>
             <div id="futureSkills"></div>
+            <div id="futureSkillsMobile"></div>
+
           </div>
           <script>
+            var urlFuture = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=207794859&single=true&output=csv';
+
             var chart = c3.generate({
                 bindto: '#futureSkills',
                 size: {height:600},
-                padding: {right:100, left:225, top:25, bottom:25},
+                padding: {right:100, left:225, top:20, bottom:25},
                 legend: {show:false},
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'futureSkills',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=207794859&single=true&output=csv',
+                    url: urlFuture,
                     type: 'bar',
-                  },
+                    },
                 grid: {x: {show: true}},
                 axis: {
                   x: {
@@ -142,6 +146,38 @@
                 },
                 bar: {
                   width: 30,
+                }
+            });
+
+            var chart = c3.generate({
+                bindto: '#futureSkillsMobile',
+                size: {height:300},
+                padding: {left:150, top:20, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'futureSkills',
+                    url: urlFuture,
+                    type: 'bar',
+                    },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: 15,
                 }
             });
           </script>

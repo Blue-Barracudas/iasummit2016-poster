@@ -113,17 +113,20 @@
           <div class="graph col-md-12">
             <h1>What best describes your educational/professional background?</h1>
             <div id="describeBackground"></div>
+            <div id="describeBackgroundMobile"></div>
           </div>
           <script>
+            var urlBackground = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csv';
+
             var chart = c3.generate({
                 bindto: '#describeBackground',
                 size: {height:600},
-                padding: {right:150, left:250, top:25, bottom:25},
+                padding: {right:150, left:225, top:25, bottom:25},
                 legend: {show:false},
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'Background',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csv',
+                    url: urlBackground,
                     type: 'bar',
                   },
                 grid: {x: {show: true}},
@@ -144,6 +147,41 @@
                 },
                 bar: {
                   width: 30,
+                }
+            });
+
+            var chart = c3.generate({
+                bindto: '#describeBackgroundMobile',
+                size: {height:300},
+                padding: {top:15},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'Background',
+                    url: urlBackground,
+                    type: 'bar',
+                 },
+               //  grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       show: false,
+                     //   text: '# of Respondents',
+                     //   position: 'outer-middle',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: {
+                    ratio: .50,},
                 }
             });
           </script>
