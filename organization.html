@@ -112,25 +112,33 @@
            </div>
           <div class="graph col-sm-12">
              <h1>What's your organization like?</h1>
-
-             <div class="col-sm-8" id="industry-wrapper">
+             <div id="industry-wrapper">
+             <!-- <div class="col-sm-8" id="industry-wrapper"> -->
                 <span>Industry Type</span>
                <div id="industry"></div>
                <div id="industryMobile"></div>
             </div>
+         </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-12">
+               <div class="col-sm-4">
                <!-- <h2>What type of division?</h2> -->
                <div id="division"></div>
                <div id="divisionMobile"></div>
+            </div>
 
+            <div class="col-sm-4">
                <!-- <h2>What best describes your org type?</h2> -->
                <div id="organization"></div>
                <div id="organizationMobile"></div>
+            </div>
 
+            <div class="col-sm-4">
                <!-- <h2>What size is your team?</h2> -->
                <div id="teamsize"></div>
                <div id="teamsizeMobile"></div>
+            </div>
+
             </div>
           </div>
           <script>
@@ -144,8 +152,8 @@
 
           var chart = c3.generate({
              bindto: '#industry',
-             size: {height:600},
-             padding: {right:0, left:0, top:10},
+             size: {height:500},
+             padding: {right:50, left:140, top:10},
              legend: {show:false},
              color: {pattern: ['#F4D03F']},
              data: {
@@ -159,7 +167,7 @@
                   type:'category',
                   tick: {
                     multiline:false,
-                    rotate: 90,
+                    rotate: 0,
                   },
                 },
                 y: {
@@ -169,7 +177,7 @@
 
                   }
                 },
-                rotated: false,
+                rotated: true,
              },
              bar: {
                 width: {
