@@ -112,13 +112,23 @@
 
           <div class="graph col-sm-12">
             <h1>What best describes your current job title?</h1>
-            <div id="position"></div>
-            <div id="positionMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+            <div id="position" class="viz"></div>
+            <div id="positionMobile" class="viz"></div>
 
           </div>
           <script>
-            var positionURL = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv';
-            var chart = c3.generate({
+            var positionURL = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csvs';
+
+            $.ajax({
+             url: positionURL,
+             context: document.body
+            }).success(function() {
+               $('.loading').hide();
+               var chart = c3.generate({
                 bindto: '#position',
                 size: {height:600},
                 padding: {right:100, left:200, top:30, bottom:25},
@@ -151,7 +161,7 @@
                 }
             });
 
-            var chart = c3.generate({
+            var chartMobile = c3.generate({
                 bindto: '#positionMobile',
                 size: {height:300},
                 padding: {top:15},
@@ -159,10 +169,9 @@
                 color: {pattern: ['#F4D03F']},
                 data: {
                     x : 'jobTitle',
-                    url: 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1229305332&single=true&output=csv',
+                    url: positionURL,
                     type: 'bar',
                  },
-               //  grid: {x: {show: true}},
                 axis: {
                   x: {
                     type:'category',
@@ -174,9 +183,6 @@
                   y: {
                     label: {
                        show: false,
-                     //   text: '# of Respondents',
-                     //   position: 'outer-middle',
-                    }
                   },
                   rotated: true,
                 },
@@ -184,10 +190,93 @@
                   width: {
                     ratio: .50,},
                 }
+            }
+         });
+            if ($(window).width() < 450) {
+               $('#positionMobile').addClass('loading-show');
+            } else {
+               $('#position').addClass('loading-show');
+               }
+         }).error(function(){
+            $('#loading-text').text(function () {
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying archived responses from 5/3.")
+            });
+            window.setTimeout(function(){
+             positionURL = 'data/currentRole.csv';
+             var chart = c3.generate({
+             bindto: '#position',
+             size: {height:600},
+             padding: {right:100, left:200, top:30, bottom:25},
+             legend: {show:false},
+             color: {pattern: ['#F4D03F']},
+             data: {
+                  x : 'jobTitle',
+                  url: positionURL,
+                  type: 'bar',
+                },
+             grid: {x: {show: true}},
+             axis: {
+                x: {
+                  type:'category',
+                  tick: {
+                    multiline:false,
+                  },
+                },
+                y: {
+                  label: {
+                     text: '# of Respondents',
+                     position: 'outer-center',
+                  }
+                },
+                rotated: true,
+             },
+             bar: {
+                width: {
+                  ratio: .50,},
+             }
+          });
+
+          var chartMobile = c3.generate({
+             bindto: '#positionMobile',
+             size: {height:300},
+             padding: {top:15},
+             legend: {show:false},
+             color: {pattern: ['#F4D03F']},
+             data: {
+                  x : 'jobTitle',
+                  url: positionURL,
+                  type: 'bar',
+               },
+             axis: {
+                x: {
+                  type:'category',
+                  tick: {
+                    multiline:false,
+                    rotate: 90,
+                  },
+                },
+                y: {
+                  label: {
+                     show: false,
+                },
+                rotated: true,
+             },
+             bar: {
+                width: {
+                  ratio: .50,},
+             }
+          }
+      });
+
+           if ($(window).width() < 450) {
+              $('#positionMobile').addClass('loading-show');
+           } else {
+              $('#position').addClass('loading-show');
+              }
+               $('.loading').hide();
+            }, 3500);
             });
           </script>
-
-
       </div>
     </div>
     <script src="js/script.js" type="text/javascript"></script>

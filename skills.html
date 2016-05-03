@@ -110,12 +110,22 @@
            </div>
           <div class="graph col-md-12">
             <h1>What skills do you think UX'ers will need to have in field you previously selected?</h1>
-            <div id="futureSkills"></div>
-            <div id="futureSkillsMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+            <div id="futureSkills" class="viz"></div>
+            <div id="futureSkillsMobile" class="viz"></div>
 
           </div>
           <script>
-            var urlFuture = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=207794859&single=true&output=csv';
+            var urlFuture = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=207794859&single=true&output=csvs';
+
+            $.ajax({
+              url: urlFuture,
+              context: document.body
+            }).success(function() {
+               $('.loading').hide();
 
             var chart = c3.generate({
                 bindto: '#futureSkills',
@@ -180,6 +190,89 @@
                   width: 15,
                 }
             });
+            if ($(window).width() < 450) {
+               $('#futureSkillsMobile').addClass('loading-show');
+            } else {
+               $('#futureSkills').addClass('loading-show');
+               }
+            }).error(function(){
+               $('#loading-text').text(function () {
+                  return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying archived responses from 5/3.")
+               });
+            window.setTimeout(function(){
+            urlFuture = 'data/futureSkillsFinal.csv';
+            var chart = c3.generate({
+                bindto: '#futureSkills',
+                size: {height:600},
+                padding: {right:100, left:225, top:20, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'futureSkills',
+                    url: urlFuture,
+                    type: 'bar',
+                    },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: 30,
+                }
+            });
+
+            var chart = c3.generate({
+                bindto: '#futureSkillsMobile',
+                size: {height:300},
+                padding: {left:150, top:20, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'futureSkills',
+                    url: urlFuture,
+                    type: 'bar',
+                    },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: 15,
+                }
+            });
+
+           if ($(window).width() < 450) {
+              $('#futureSkillsMobile').addClass('loading-show');
+           } else {
+              $('#futureSkills').addClass('loading-show');
+              }
+               $('.loading').hide();
+            }, 3500);
+         });
           </script>
       </div>
     </div>

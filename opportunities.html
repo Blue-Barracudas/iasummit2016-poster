@@ -112,12 +112,22 @@
          </div>
           <div class="graph col-sm-12">
             <h1>Which area do you think UX professionals will be most needed in the next 5 - 10 years?</h1>
-            <div id="growthAreas"></div>
-            <div id="growthAreasMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+            <div id="growthAreas" class="viz"></div>
+            <div id="growthAreasMobile" class="viz"></div>
 
           </div>
           <script>
             var urlOpps = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1352797638&single=true&output=csv';
+
+            $.ajax({
+              url: urlOpps,
+              context: document.body
+            }).success(function() {
+              $('.loading').hide();
             var chart = c3.generate({
                 bindto: '#growthAreas',
                 size: {height: 430},
@@ -141,6 +151,43 @@
                  },
                  color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F', '#910808', '#017e63']},
              });
+            }).error(function(){
+             $('#loading-text').text(function () {
+                return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying archived responses from 5/3.")
+             });
+             window.setTimeout(function(){
+              urlOpps = 'data/futureUXPie.csv';
+              var chart = c3.generate({
+                  bindto: '#growthAreas',
+                  size: {height: 430},
+                  padding: {top:10},
+                  data: {
+                      url: urlOpps,
+                      type: 'pie',
+                   },
+                   legend: {
+                      position: 'right',
+                   },
+                   color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F', '#910808', '#017e63']},
+             });
+             var chartMobile = c3.generate({
+                 bindto: '#growthAreasMobile',
+                 size: {height: 300},
+                 data: {
+                    url: urlOpps,
+                    type: 'pie',
+                 },
+                 color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F', '#910808', '#017e63']},
+             });
+             if ($(window).width() < 450) {
+                $('#growthAreasMobile').addClass('loading-show');
+             } else {
+                $('#growthAreas').addClass('loading-show');
+                }
+                 $('.loading').hide();
+             }, 3500);
+          });
+
           </script>
 
 
