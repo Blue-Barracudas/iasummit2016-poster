@@ -113,13 +113,23 @@
 
           <div class="graph col-sm-12">
             <h1>What tasks do you often perform?</h1>
-            <div id="tasks"></div>
-            <div id="tasksMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+
+            <div id="tasks" class="viz"></div>
+            <div id="tasksMobile" class="viz"></div>
 
           </div>
           <script>
             var urlTasks = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1822938404&single=true&output=csv';
 
+            $.ajax({
+              url: urlTasks,
+              context: document.body
+            }).success(function() {
+               $('.loading').hide();
             var taskChart = c3.generate({
                 bindto: '#tasks',
                 size: {height:600},
@@ -189,6 +199,95 @@
                     ratio: .30,},
                 }
             });
+            if ($(window).width() < 450) {
+               $('#describeBackgroundMobile').addClass('loading-show');
+            } else {
+               $('#describeBackground').addClass('loading-show');
+               }
+         }).error(function(){
+            $('#loading-text').text(function () {
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+            });
+            window.setTimeout(function(){
+             urlTasks = 'data/currentSkillsFinal.csv';
+             var taskChart = c3.generate({
+                bindto: '#tasks',
+                size: {height:600},
+                padding: {right:50, left:75, top:30, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'tasks',
+                    url: urlTasks,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-middle',
+
+                    }
+                  },
+                  rotated: false,
+                },
+                bar: {
+                  width: {
+                    ratio: .50,},
+                }
+            });
+
+            var taskChartMobile = c3.generate({
+                bindto: '#tasksMobile',
+                size: {height:400},
+                padding: {top:30},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'tasks',
+                    url: urlTasks,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-middle',
+
+                    }
+                  },
+                  rotated: false,
+                },
+                bar: {
+                  width: {
+                    ratio: .30,},
+                }
+            });
+            if ($(window).width() < 450) {
+               $('#tasksMobile').addClass('loading-show');
+            } else {
+               $('#tasks').addClass('loading-show');
+               }
+                $('.loading').hide();
+             }, 3500);
+          });
+
           </script>
 
 

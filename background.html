@@ -123,7 +123,7 @@
             <div id="describeBackgroundMobile" class="viz"></div>
           </div>
           <script>
-            var urlBackground = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csvs';
+            var urlBackground = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=628250820&single=true&output=csv';
 
             $.ajax({
               url: urlBackground,
@@ -200,7 +200,7 @@
                    }
              }).error(function(){
                 $('#loading-text').text(function () {
-                   return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying archived responses from 5/3.")
+                   return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
                 });
                 window.setTimeout(function(){
                  urlBackground = 'data/describeBackground.csv';

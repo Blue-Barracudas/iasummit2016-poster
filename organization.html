@@ -109,38 +109,43 @@
             <div class="forward col-md-6">
                 <span class="sub-nav-icon right-icon">  |<i class="fa fa-chevron-right"></i></span><a href="position.html">NEXT<br /><span class="sub-nav-text right-text">Position</span></a>
             </div>
-           </div>
-          <div class="graph col-sm-12">
+         </div>
+           <div class="col-sm-12">
+
+          <div class="graph col-sm-8">
              <h1>What's your organization like?</h1>
+             <div class="loading">
+                <div class="loader">Loading...</div>
+                <span id="loading-text">Loading...</span>
+             </div>
              <div id="industry-wrapper">
              <!-- <div class="col-sm-8" id="industry-wrapper"> -->
-                <span>Industry Type</span>
-               <div id="industry"></div>
-               <div id="industryMobile"></div>
+               <span id="industry-viz-label" style="display:none;">Industry Type</span>
+               <div id="industry" class="viz"></div>
+               <div id="industryMobile" class="viz"></div>
             </div>
          </div>
-
-            <div class="col-sm-12">
-               <div class="col-sm-4">
+            <div class="col-sm-4" style="margin-top:3em;">
                <!-- <h2>What type of division?</h2> -->
-               <div class="loader">Loading...</div>
-               <div id="division"></div>
-               <div id="divisionMobile"></div>
-            </div>
 
-            <div class="col-sm-4">
+               <div id="division" class="viz"></div>
+               <div id="divisionMobile" class="viz"></div>
+
                <!-- <h2>What best describes your org type?</h2> -->
-               <div id="organization"></div>
-               <div id="organizationMobile"></div>
-            </div>
+               <div id="organization" class="viz"></div>
+               <div id="organizationMobile" class="viz"></div>
 
-            <div class="col-sm-4">
                <!-- <h2>What size is your team?</h2> -->
-               <div id="teamsize"></div>
-               <div id="teamsizeMobile"></div>
+               <div id="teamsize" class="viz"></div>
+               <div id="teamsizeMobile" class="viz"></div>
             </div>
 
             </div>
+
+
+         </div>
+
+
           </div>
           <script>
           var urlOrganization = "https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=762662533&single=true&output=csv";
@@ -151,10 +156,17 @@
 
           var urlTeam = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=794571525&single=true&output=csv';
 
-          var chart = c3.generate({
+
+// Starting industryType
+          $.ajax({
+            url: urlIndustry,
+            context: document.body
+          }).success(function() {
+             $('.loading').hide();
+          var industrychart = c3.generate({
              bindto: '#industry',
              size: {height:500},
-             padding: {right:50, left:140, top:10},
+             padding: {right:50, left:140, top:10, bottom:25},
              legend: {show:false},
              color: {pattern: ['#F4D03F']},
              data: {
@@ -174,7 +186,7 @@
                 y: {
                   label: {
                      text: '# of Respondents',
-                     position: 'outer-middle',
+                     position: 'outer-center',
 
                   }
                 },
@@ -186,7 +198,89 @@
              }
           });
 
-          var chart = c3.generate({
+          var industryMobilechart = c3.generate({
+             bindto: '#industryMobile',
+             size: {height:400},
+             padding: {right:0, left:0, top:10, bottom:20},
+             legend: {show:false},
+             color: {pattern: ['#F4D03F']},
+             data: {
+                  x : 'industryType',
+                  url: urlIndustry,
+                  type: 'bar',
+               },
+             grid: {x: {show: true}},
+             axis: {
+               x: {
+                  type:'category',
+                  tick: {
+                    multiline:false,
+                    rotate: 90,
+                  },
+               },
+               y: {
+                  label: {
+                     text: '# of Respondents',
+                     position: 'outer-middle',
+
+                  }
+               },
+               rotated: false,
+             },
+             bar: {
+               width: {
+                  ratio: .50,},
+             }
+          });
+          if ($(window).width() < 450) {
+             $('#industry-viz-label').show();
+             $('#industryMobile').addClass('loading-show');
+          } else {
+             $('#industry-viz-label').show();
+             $('#industry').addClass('loading-show');
+             }
+          }).error(function(){
+          $('#loading-text').text(function () {
+             return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+          });
+          window.setTimeout(function(){
+           urlIndustry = 'data/industryType.csv';
+           var industrychart = c3.generate({
+             bindto: '#industry',
+             size: {height:500},
+             padding: {right:50, left:140, top:10, bottom:25},
+             legend: {show:false},
+             color: {pattern: ['#F4D03F']},
+             data: {
+                  x : 'industryType',
+                  url: urlIndustry,
+                  type: 'bar',
+                },
+             grid: {x: {show: true}},
+             axis: {
+                x: {
+                  type:'category',
+                  tick: {
+                    multiline:false,
+                    rotate: 0,
+                  },
+                },
+                y: {
+                  label: {
+                     text: '# of Respondents',
+                     position: 'outer-center',
+
+                  }
+                },
+                rotated: true,
+             },
+             bar: {
+                width: {
+                  ratio: .50,},
+             }
+          });
+
+          var industrychartmobile = c3.generate({
              bindto: '#industryMobile',
              size: {height:400},
              padding: {right:0, left:0, top:10, bottom:20},
@@ -221,6 +315,23 @@
              }
           });
 
+          if ($(window).width() < 450) {
+             $('#industry-viz-label').show();
+             $('#industryMobile').addClass('loading-show');
+          } else {
+             $('#industry-viz-label').show();
+             $('#industry').addClass('loading-show');
+             }
+             $('.loading').hide();
+           }, 3500);
+        });
+
+// Starting org type viz
+         $.ajax({
+           url: urlOrganization,
+           context: document.body
+         }).success(function() {
+            $('.loading').hide();
            var orgChart = c3.generate({
                bindto: '#organization',
                size: {height: 225},
@@ -236,7 +347,47 @@
                   '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']
                },
             });
+            if ($(window).width() < 450) {
+               $('#organization').addClass('loading-show');
+            } else {
+               $('#organization').addClass('loading-show');
+               }
+         }).error(function(){
+            $('#loading-text').text(function () {
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+            });
+            window.setTimeout(function(){
+             urlOrganization = 'data/organizationTypePie.csv';
+             var orgChart = c3.generate({
+                 bindto: '#organization',
+                 size: {height: 225},
+                 data: {
+                    url: urlOrganization,
+                    type: 'donut',
+                 },
+                 legend: {hide:true},
+                 donut: {
+                    title: "Org Type"
+                 },
+                 color: {pattern: [
+                    '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']
+                 },
+              });
+              if ($(window).width() < 450) {
+                 $('#organization').addClass('loading-show');
+              } else {
+                 $('#organization').addClass('loading-show');
+                 }
+                  $('.loading').hide();
+               }, 3500);
+               });
 
+// Starting division type
+            $.ajax({
+             url: urlDivision,
+             context: document.body
+            }).success(function() {
+               $('.loading').hide();
            var divisonChart = c3.generate({
                bindto: '#division',
                size: {height: 225},
@@ -251,7 +402,47 @@
                color: {pattern: [
                   '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']         }
                   });
+               if ($(window).width() < 450) {
+                  $('#division').addClass('loading-show');
+               } else {
+                  $('#division').addClass('loading-show');
+                  }
+            }).error(function(){
+               $('#loading-text').text(function () {
+                  return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+               });
+               window.setTimeout(function(){
+                urlDivision = 'data/divisionTypePie.csv';
+                var divisonChart = c3.generate({
+                    bindto: '#division',
+                    size: {height: 225},
+                    data: {
+                       url: urlDivision,
+                       type: 'donut',
+                    },
+                    legend: {hide:true},
+                    donut: {
+                        title: "Division Type"
+                    },
+                    color: {pattern: [
+                       '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']         }
+                       });
+                    if ($(window).width() < 450) {
+                       $('#division').addClass('loading-show');
+                    } else {
+                       $('#division').addClass('loading-show');
+                       }
+                        $('.loading').hide();
+                     }, 3500);
+                  });
 
+
+// Start team
+         $.ajax({
+           url: urlTeam,
+           context: document.body
+         }).success(function() {
+            $('.loading').hide();
            var teamChart = c3.generate({
                bindto: '#teamsize',
                size: {height: 225},
@@ -267,6 +458,40 @@
                   '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']
                }
             });
+            if ($(window).width() < 450) {
+               $('#teamsize').addClass('loading-show');
+            } else {
+               $('#teamsize').addClass('loading-show');
+               }
+         }).error(function(){
+            $('#loading-text').text(function () {
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+            });
+            window.setTimeout(function(){
+            urlTeam = 'data/teamSizePie.csv';
+            var teamChart = c3.generate({
+                bindto: '#teamsize',
+                size: {height: 225},
+                data: {
+                   url: urlTeam,
+                   type: 'donut',
+                },
+                legend: {hide:true},
+                donut: {
+                    title: "Team Size"
+                },
+                color: {pattern: [
+                   '#08a1dd', '#028090', '#F65252', '#02C39A', '#F4D03F', '#9de1fb', '#9bf2fd', '#fa9e9e', '#9afee8', '#f9e79f',  '#04597b', '#036f7d', '#910808', '#017e63']
+                }
+             });
+             if ($(window).width() < 450) {
+                $('#teamsize').addClass('loading-show');
+             } else {
+                $('#teamsize').addClass('loading-show');
+                }
+                $('.loading').hide();
+              }, 3500);
+           });
           </script>
 
 

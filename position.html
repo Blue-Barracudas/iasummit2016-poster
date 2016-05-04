@@ -199,7 +199,7 @@
                }
          }).error(function(){
             $('#loading-text').text(function () {
-               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying archived responses from 5/3.")
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
             });
             window.setTimeout(function(){
              positionURL = 'data/currentRole.csv';

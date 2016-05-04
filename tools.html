@@ -111,12 +111,22 @@
          </div>
           <div class="graph col-sm-12">
             <h1>What tools do you use?</h1>
-            <div id="tools"></div>
-            <div id="toolsMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+            <div id="tools" class="viz"></div>
+            <div id="toolsMobile" class="viz"></div>
           </div>
           <script>
             var urlTools = 'https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1947658518&single=true&output=csv';
 
+
+            $.ajax({
+              url: urlTools,
+              context: document.body
+            }).success(function() {
+               $('.loading').hide();
             var chart = c3.generate({
                 bindto: '#tools',
                 size: {height:600},
@@ -183,6 +193,91 @@
                     ratio: .5,
                   }                 }
             });
+            if ($(window).width() < 450) {
+               $('#toolsMobile').addClass('loading-show');
+            } else {
+               $('#tools').addClass('loading-show');
+               }
+         }).error(function(){
+            $('#loading-text').text(function () {
+               return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+            });
+            window.setTimeout(function(){
+            urlTools = 'data/currentToolsFinal.csv';
+            var chart = c3.generate({
+                bindto: '#tools',
+                size: {height:600},
+                padding: {right:50, left:175, top:25, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'currentTools',
+                    url: urlTools,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-center',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: {
+                    ratio: .5,
+                  }                 }
+            });
+
+            var chart = c3.generate({
+                bindto: '#toolsMobile',
+                size: {height:400},
+                padding: {right:50, left:100, top:25, bottom:25},
+                legend: {show:false},
+                color: {pattern: ['#F4D03F']},
+                data: {
+                    x : 'currentTools',
+                    url: urlTools,
+                    type: 'bar',
+                  },
+                grid: {x: {show: true}},
+                axis: {
+                  x: {
+                    type:'category',
+                    tick: {
+                      multiline:false,
+                      rotate: 90,
+                    },
+                  },
+                  y: {
+                    label: {
+                       text: '# of Respondents',
+                       position: 'outer-middle',
+                    }
+                  },
+                  rotated: true,
+                },
+                bar: {
+                  width: {
+                    ratio: .5,
+                  }                 }
+            });
+            if ($(window).width() < 450) {
+               $('#toolsMobile').addClass('loading-show');
+            } else {
+               $('#tools').addClass('loading-show');
+               }
+                $('.loading').hide();
+             }, 3500);
+          });
           </script>
 
 
