@@ -99,9 +99,9 @@
 
       <div class="container-fluid content">
          <div class="sub-nav">
-   <nav class="mobile">
-      <span><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
-   </nav>
+         <nav class="mobile">
+            <span><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
+         </nav>
             <div class="back col-md-6">
               <span class="sub-nav-icon"><i class="fa fa-chevron-left"></i>| </span><a href="background.html"> PREVIOUS<br /><span class="sub-nav-text left-text">Background</span></a>
             </div>
@@ -111,19 +111,28 @@
          </div>
           <div class="graph col-md-12">
             <h1>How many years have you been working in UX?</h1>
-            <div id="yearsExp"></div>
-            <div id="yearsExpMobile"></div>
+            <div class="loading">
+               <div class="loader">Loading...</div>
+               <span id="loading-text">Loading...</span>
+            </div>
+            <div id="yearsExp" class="viz"></div>
+            <div id="yearsExpMobile" class="viz"></div>
 
           </div>
           <script>
-            var url = "https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1214121046&single=true&output=csv";
+            var urlYears = "https://crossorigin.me/https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/pub?gid=1214121046&single=true&output=csvs";
 
+            $.ajax({
+              url: urlYears,
+              context: document.body
+            }).success(function() {
+               $('.loading').hide();
             var chart = c3.generate({
                 bindto: '#yearsExp',
                 size: {height: 430},
                 padding: {top:10},
                 data: {
-                    url: url,
+                    url: urlYears,
                     type: 'pie',
                  },
                  legend: {
@@ -136,10 +145,52 @@
                  bindto: '#yearsExpMobile',
                  size: {height: 300},
                  data: {
-                    url: url,
+                    url: urlYears,
                     type: 'pie',
                  },
                  color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F']},
+             });
+             if ($(window).width() < 450) {
+                $('#yearsExpMobile').addClass('loading-show');
+             } else {
+                $('#yearsExp').addClass('loading-show');
+                }
+          }).error(function(){
+             $('#loading-text').text(function () {
+                return $(this).text().replace("Loading...", "Unable to retrieve live data, displaying stored responses.")
+             });
+             window.setTimeout(function(){
+              urlYears = 'data/yearsExperiencePie.csv';
+              var chart = c3.generate({
+                  bindto: '#yearsExp',
+                  size: {height: 430},
+                  padding: {top:10},
+                  data: {
+                      url: urlYears,
+                      type: 'pie',
+                   },
+                   legend: {
+                      position: 'right',
+                   },
+                   color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F']},
+             });
+
+               var chartMobile = c3.generate({
+                   bindto: '#yearsExpMobile',
+                   size: {height: 300},
+                   data: {
+                      url: urlYears,
+                      type: 'pie',
+                   },
+                   color: {pattern: ['#05668D', '#028090', '#F65252', '#02C39A', '#F4D03F']},
+               });
+               if ($(window).width() < 450) {
+                  $('#yearsExpMobile').addClass('loading-show');
+               } else {
+                  $('#yearsExp').addClass('loading-show');
+                  }
+                   $('.loading').hide();
+                }, 3500);
              });
           </script>
 
