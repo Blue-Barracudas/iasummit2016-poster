@@ -1,27 +1,19 @@
-curl -o yearsExperiencePie.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1214121046&format=csv
+curl -o yearsExperiencePie.csv "https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1214121046&format=csv"
 
-curl -o describeBackground.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=628250820&format=csv
+curl -o describeBackground.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=628250820&format=csv
 
-curl -o industryType.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1973738064&format=csv
+curl -o industryType.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1973738064&format=csv
 
-curl -o teamSizePie.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=794571525&format=csv
+curl -o teamSizePie.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=794571525&format=csv
 
-curl -o divisionTypePie.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1334104629&format=csv
+curl -o divisionTypePie.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1334104629&format=csv
 
-curl -o currentRole.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1229305332&format=csv
+curl -o currentRole.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1229305332&format=csv
 
-curl -o currentSkillsFinal.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1822938404&format=csv
+curl -o currentSkillsFinal.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1822938404&format=csv
 
-curl -o currentToolsFinal.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1947658518&format=csv
+curl -o currentToolsFinal.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1947658518&format=csv
 
-curl -o futureUXPie.csv
-https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1352797638&format=csv
+curl -o futureUXPie.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=1352797638&format=csv
 
 curl -o futureSkillsFinal.csv https://docs.google.com/spreadsheets/d/1mPR9RTE0WkFqJ6HZW7n4V7VSq284lHu4PuAebnFZ-x4/export?gid=207794859&format=csv
